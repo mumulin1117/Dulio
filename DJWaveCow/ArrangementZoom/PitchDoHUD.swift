@@ -12,8 +12,8 @@ class PitchDoHUD{
     
     // MARK: - Show Loading HUD
     static func showBeatLoading(on view: UIView,
-                              title: String = "Mixing Tracks...",
-                              detail: String = "Preparing your audio experience") {
+                              title: String = "",
+                              detail: String = "") {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .indeterminate
         hud.label.text = title
@@ -30,7 +30,7 @@ class PitchDoHUD{
     
     // MARK: - Show Success HUD
     static func showDropSuccess(on view: UIView,
-                              title: String = "Track Dropped!",
+                              title: String = "",
                               detail: String? = nil,
                               duration: TimeInterval = 2.0) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -51,8 +51,8 @@ class PitchDoHUD{
     
     // MARK: - Show Error HUD
     static func showMixFailed(on view: UIView,
-                            title: String = "Beat Sync Failed",
-                            detail: String? = "Check your connection and try again",
+                            title: String = "",
+                            detail: String? = "",
                             duration: TimeInterval = 3.0) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .customView

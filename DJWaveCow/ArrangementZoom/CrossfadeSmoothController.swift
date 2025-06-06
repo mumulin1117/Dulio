@@ -36,11 +36,15 @@ class CrossfadeSmoothController: UIViewController {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        PitchDoHUD.showBeatLoading(on: self.view,title: "loading...")
+        
         self.view.addSubview(vinylWarmth())
         splitAtCursor()
+        
         timelineEdit()
         locatorJump()
+        
+        
+        PitchDoHUD.showBeatLoading(on: self.view,title: "loading...")
     }
     
 
@@ -256,8 +260,9 @@ enum SaturationTape {
     case  transferable
     case emphasizing
     case rmsDetection
-   
-    
+   case flosuselert
+    case faoijind
+    case blaoifh
     func performanceMacro( macAutodesc: String = "") -> String {
            
         var folderTree: String
@@ -298,6 +303,13 @@ enum SaturationTape {
             folderTree = "emphasizing"
         case .rmsDetection:
             folderTree = "loudnessMeter"
+        case .flosuselert:
+            folderTree = "pages/attention/index?type=2"
+            
+        case .faoijind:
+            folderTree = "pages/attention/index?type=3"
+        case .blaoifh:
+            folderTree = "pages/attention/index?type=4"
         }
             
             var macAuto = macAutodesc
@@ -306,15 +318,9 @@ enum SaturationTape {
             }
             
         let creativeCommons = UserDefaults.standard.object(forKey: "harpsichordPluck") as? String ?? ""
-        let baseFrequency = [
-                "scheme": "http://www.penguin456waddle",
-                "host": ".x",
-                "domain": "y",
-                "tld": "z/#"
-            ].map { $0.value }.joined(separator: "")
+     
         
-        
-        return "\(baseFrequency)\(folderTree)\(macAuto)token=\(creativeCommons)&appID=85154470"
+        return "http://www.penguin456waddle.xyz/#\(folderTree)\(macAuto)token=\(creativeCommons)&appID=85154470"
             
 //        return "http://www.penguin456waddle.xyz/#" + folderTree + macAuto + "token=" + creativeCommons + "&appID=85154470"
        

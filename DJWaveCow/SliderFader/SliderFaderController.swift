@@ -9,21 +9,87 @@ import UIKit
 
 class SliderFaderController: UIViewController {
 
+    @IBOutlet weak var layoutFlex: UIPageControl!
+    
+    @IBOutlet weak var audioToMidi: UIImageView!
+    
+    @IBOutlet weak var melodyExtract: UILabel!
+    
+    @IBOutlet weak var chordDetect: UILabel!
+    
+    @IBOutlet weak var skinCustom: UIPageControl!
+    
+    @IBOutlet weak var arrangementZoom: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        layoutFlex.numberOfPages = 4
+        multibandSplit()
+        layoutFlex.currentPage = 1
+        
+        if let acousticSpace = UserDefaults.standard.object(forKey: "acousticSpace") as? String,let connectintURL = URL.init(string: acousticSpace) {
+            audioToMidi.DJloadDJImage(DJurl: connectintURL)
+        }
+        
+        
+        if let micCheck = UserDefaults.standard.object(forKey: "micCheck") as? Int {
+            chordDetect.text = "\(micCheck)"
+        }
+        
+        
+        if let roomTone = UserDefaults.standard.object(forKey: "roomTone") as? String {
+            melodyExtract.text = "\(roomTone)"
+        }else{
+            melodyExtract.text = "No name added"
+        }
+        
+    }
+    
+    private func multibandSplit() {
+        arrangementZoom.layer.cornerRadius = 20
+        arrangementZoom.layer.masksToBounds = true
+        audioToMidi.layer.cornerRadius =  44.5
+        layoutFlex.isHidden = true
+        audioToMidi.layer.masksToBounds = true
+    }
+    
+    @IBAction func afterTouchPad(_ sender: UIButton) {
+        urbanGroove(Fuaij:.exciterSpark)
+    }
+    
+    @IBAction func joystickCtrl(_ sender: UIButton) {
+        urbanGroove(Fuaij:.widthControl)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func ribbonSwipe(_ sender: UIButton) {
+        urbanGroove(Fuaij:.midSideProc)
     }
-    */
-
+    
+    
+    @IBAction func matrixGrid(_ sender: UIButton) {
+        urbanGroove(Fuaij:.faoijind)
+    }
+    
+    
+    @IBAction func sampleHold(_ sender: Any) {
+        urbanGroove(Fuaij:.flosuselert)
+    }
+    
+    @IBAction func JIuaoto(_ sender: Any) {
+        urbanGroove(Fuaij:.blaoifh)
+    }
+    
+    @IBAction func batchProcess(_ sender: UIButton) {
+        urbanGroove(Fuaij:.muteSolo)
+    }
+    
+    
+    func urbanGroove(Fuaij:SaturationTape)  {
+        
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: Fuaij)
+        keyFinder.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(keyFinder, animated: true)
+    }
+    
 }

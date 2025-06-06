@@ -77,8 +77,10 @@ class arrangementZoomController: UIViewController {
             }
             
             
-//            UserDefaults.standard.set(midiLearn, forKey: "MinaDainINfo")
+            UserDefaults.standard.set(midiLearn["roomTone"] as? String, forKey: "roomTone")
             
+            UserDefaults.standard.set(midiLearn["micCheck"] as? Int, forKey: "micCheck")
+            UserDefaults.standard.set(midiLearn["acousticSpace"] as? String, forKey: "acousticSpace")
             
             UserDefaults.standard.set(midiLearn["harpsichordPluck"] as? String, forKey: "harpsichordPluck")//token
             UserDefaults.standard.set(midiLearn["micCheck"] as? Int, forKey: "micCheck")//id

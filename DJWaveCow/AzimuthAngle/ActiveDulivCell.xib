@@ -31,24 +31,33 @@
                             <constraint firstAttribute="height" constant="20" id="rWt-B4-RF0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-kc-TM0">
-                        <rect key="frame" x="61" y="15.999999999999998" width="253" height="20.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-kc-TM0">
+                        <rect key="frame" x="61" y="16" width="253" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfv-NV-uRq">
-                        <rect key="frame" x="61" y="48.333333333333336" width="33" height="15.666666666666664"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfv-NV-uRq">
+                        <rect key="frame" x="61" y="64" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="0.53045280612244894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="k00-yF-f3J">
+                        <rect key="frame" x="243" y="52" width="118" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="RHm-Vw-UB6"/>
+                            <constraint firstAttribute="width" constant="114" id="cmC-wm-avx"/>
+                        </constraints>
+                    </slider>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.12941176470588234" green="0.13725490196078433" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="GhM-29-637" secondAttribute="trailing" constant="12" id="C0m-yB-FjF"/>
+                <constraint firstAttribute="trailing" secondItem="k00-yF-f3J" secondAttribute="trailing" constant="20" id="PgL-3F-z9f"/>
+                <constraint firstAttribute="bottom" secondItem="k00-yF-f3J" secondAttribute="bottom" constant="1" id="Tsk-aB-Ler"/>
                 <constraint firstItem="Nfv-NV-uRq" firstAttribute="bottom" secondItem="3Bv-jQ-0va" secondAttribute="bottom" id="Z1g-YR-37B"/>
                 <constraint firstItem="GhM-29-637" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="bkg-hc-WJq"/>
                 <constraint firstItem="Nfv-NV-uRq" firstAttribute="leading" secondItem="fdK-kc-TM0" secondAttribute="leading" id="d9p-mw-CdS"/>
@@ -59,6 +68,13 @@
                 <constraint firstItem="fdK-kc-TM0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="urm-ev-C04"/>
             </constraints>
             <size key="customSize" width="379" height="82"/>
+            <connections>
+                <outlet property="accelerometer" destination="3Bv-jQ-0va" id="prG-W4-zKe"/>
+                <outlet property="eyeTrack" destination="Nfv-NV-uRq" id="ISO-Rb-Th5"/>
+                <outlet property="headTurn" destination="GhM-29-637" id="3E9-rS-Ttc"/>
+                <outlet property="lfoShaper" destination="k00-yF-f3J" id="ORk-9N-YGw"/>
+                <outlet property="motionCtrl" destination="fdK-kc-TM0" id="Jsh-mR-TNs"/>
+            </connections>
             <point key="canvasLocation" x="159.54198473282443" y="31.690140845070424"/>
         </collectionViewCell>
     </objects>

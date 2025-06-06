@@ -8,22 +8,139 @@
 import UIKit
 
 class MatrixGridController: UIViewController {
-
+    var patternLock = Array<Dictionary<String,Any>>()
+    @IBOutlet weak var sampleAccurate: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        windChime()
+        proceedWithLogin()
+    }
+    private func windChime()  {
+        
+        
+       
+        sampleAccurate.dataSource = self
+        sampleAccurate.register(UINib(nibName: "MatrixDgridCell", bundle: nil), forCellWithReuseIdentifier: "MatrixDgridCell")
+        sampleAccurate.delegate = self
+        sampleAccurate.showsHorizontalScrollIndicator = false
+        sampleAccurate.showsVerticalScrollIndicator = false
+        
+        let layouUt = UICollectionViewFlowLayout()
+        layouUt.itemSize = CGSize(width: (UIScreen.main.bounds.width - 30 ), height: 400)
+        
+        layouUt.minimumLineSpacing = 9
+        layouUt.minimumInteritemSpacing = 9
+        layouUt.scrollDirection = .vertical
+        sampleAccurate.collectionViewLayout = layouUt
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func localBackup(_ sender: Any) {
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .soloIsolate)
+        keyFinder.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(keyFinder, animated: true)
     }
-    */
+    
+   
+    @IBAction func importDrag(_ sender: UIButton) {
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .clipperSoft)
+        keyFinder.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(keyFinder, animated: true)
+    }
+    
+    
+    private func proceedWithLogin()  {
+        
+        
+        PitchDoHUD.showBeatLoading(on: self.view,title: "Loading...")
+        let sopranoSax = ["progressiveBeats":15,"minimalTech":1,"chillStep":"85154470"] as [String : Any]
+        
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { vocalAlign in
+            guard
+                   let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
+                 
+                    let midiLearn = zoomInOut["data"] as? Array<Dictionary<String,Any>>
+                    
+            else {
+                PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: "No nore share Data")
+               
+                return
+            }
+            
+            self.patternLock = midiLearn.filter({ disoi in
+                disoi["tempoSync"] as? String != "" &&  disoi["tempoSync"] as? String != nil
+            })
+         
+            PitchDoHUD.hideHUD(for: self.view)
+            
+            self.sampleAccurate.reloadData()
+           
+        } onInterference: { audioToMidi in
+            PitchDoHUD.hideHUD(for: self.view)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: audioToMidi.localizedDescription)
+        }
 
+    }
+    
+}
+extension MatrixGridController:UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
+        return patternLock.count
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
+        
+        let velocityCurve = collectionView.dequeueReusableCell(withReuseIdentifier: "MatrixDgridCell", for: indexPath) as! MatrixDgridCell
+        
+        acousticSpace(view:velocityCurve,tubaBoom:patternLock[indexPath.row])
+        return velocityCurve
+        
+    }
+    
+    
+    func acousticSpace(view:MatrixDgridCell,tubaBoom:Dictionary<String,Any>) {
+      
+        
+        if let instrumentalFlow = tubaBoom["instrumentalFlow"] as? String {
+            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: instrumentalFlow))
+        }
+        
+        view.motionCtrl.text = tubaBoom["urbanGroove"] as? String
+        
+        view.eyeTrack.text = tubaBoom["neoFunk"] as? String
+        view.headTurn.image = UIImage(named: (tubaBoom["delayEffect"] as? Int) == 1 ? "monoSum" : "screenTilt")
+        
+        
+        view.reverbShimmer.addTarget(self, action: #selector(harmonyEngine), for: .touchUpInside)
+        if let tempoSync = tubaBoom["tempoSync"] as? String{
+            view.ditherNoise.DJloadDJImage(DJurl: URL.init(string: tempoSync))
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+            if let psyTrance = patternLock[indexPath.row]["psyTrance"] as? Int{
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)")
+                keyFinder.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(keyFinder, animated: true)
+                
+                
+            }
+            
+            
+        
+    }
+    
+   @objc func harmonyEngine()  {
+       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager)
+       keyFinder.hidesBottomBarWhenPushed = true
+       self.navigationController?.pushViewController(keyFinder, animated: true)
+    }
+    
+    
 }
