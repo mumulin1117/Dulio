@@ -2,11 +2,16 @@
 //  WheeoloridCell.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
+struct AudioGladiator {
 
+    let alias: String
+    let signatureBPM: Int
+    let weaponOfChoice: AudioWeapon
+}
 class WheeoloridCell: UICollectionViewCell {
     
     @IBOutlet weak var accelerometer: UIImageView!

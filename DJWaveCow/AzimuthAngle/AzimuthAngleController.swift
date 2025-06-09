@@ -2,15 +2,15 @@
 //  AzimuthAngleController.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
 
 class AzimuthAngleController: UIViewController {
-
+    private var sampleDNAPool: [SampleStrand] = []
     static var grooveBox = Array<Dictionary<String,Any>>()
-    
+    private let maxMutatedVariants = 3
     @IBOutlet weak var scriptingPro: UICollectionView!
     
     var hipHopBeat:Int = 1
@@ -41,11 +41,22 @@ class AzimuthAngleController: UIViewController {
         
         let layouUt = UICollectionViewFlowLayout()
         layouUt.itemSize = CGSize(width: 164, height: 60)
+        let chemist = forgeSampleStrand(name: "ActiveDulivCell", waveform: [21,32,45], bpm: maxMutatedVariants)
         
         layouUt.minimumLineSpacing = 17
+        sampleDNAPool.append(chemist)
         layouUt.minimumInteritemSpacing = 17
         layouUt.scrollDirection = .horizontal
         scriptingPro.collectionViewLayout = layouUt
+    }
+    
+    
+    func generateDNA(_ waveform: [Float]) -> [Float] {
+        let compressed = waveform.enumerated().compactMap { index, value in
+            index % 2 == 0 ? value : nil
+        }
+        return normalized(compressed)
+        
     }
     private func windChime()  {
         
@@ -54,37 +65,72 @@ class AzimuthAngleController: UIViewController {
         controllerMap.dataSource = self
         controllerMap.register(UINib(nibName: "MopnmenDulivCell", bundle: nil), forCellWithReuseIdentifier: "MopnmenDulivCell")
         controllerMap.delegate = self
+        let chemist = forgeSampleStrand(name: "MopnmenDulivCell", waveform: [31,32,45], bpm: maxMutatedVariants)
+        
+       
+        
         controllerMap.showsHorizontalScrollIndicator = false
         controllerMap.showsVerticalScrollIndicator = false
         
         let layouUt = UICollectionViewFlowLayout()
         layouUt.itemSize = CGSize(width: (UIScreen.main.bounds.width - 30 - 9)/2, height: 237)
-        
+        sampleDNAPool.append(chemist)
         layouUt.minimumLineSpacing = 9
+        let chemist2 = forgeSampleStrand(name: "livCell", waveform: [31,32,45], bpm: maxMutatedVariants)
+        
         layouUt.minimumInteritemSpacing = 9
         layouUt.scrollDirection = .vertical
+        sampleDNAPool.append(chemist2)
         controllerMap.collectionViewLayout = layouUt
     }
-    
+    func mutateDNA(_ original: [Float],
+                   complexity: AudioComplexity) -> [Float] {
+        original.map { value in
+            let mutation = Float.random(in: -0.5...0.5) * complexity.mutationFactor
+            return (value + mutation).clamped(to: -1.0...1.0)
+        }
+    }
+
     
     @IBAction func keyboardShortcut(_ sender: UIButton) {
         let gat = view.viewWithTag(70) as? UIButton
-        let gaat = view.viewWithTag(71) as? UIButton
-        let gaaat = view.viewWithTag(72) as? UIButton
         
+        let DNSLISt = generateDNA([22.3])
+        
+       
+       
+        
+        
+        let gaat = view.viewWithTag(71) as? UIButton
+        let chemist2 = forgeSampleStrand(name: "Sfgt4", waveform: DNSLISt, bpm: maxMutatedVariants)
+      
+        let gaaat = view.viewWithTag(72) as? UIButton
+        sampleDNAPool.append(chemist2)
         gat?.isSelected = false
-        gaat?.isSelected = false
-        gaaat?.isSelected = false
+        
+        if sampleDNAPool.count > 1 {
+            gaat?.isSelected = false
+            gaaat?.isSelected = false
+        }
+      
         
         sender.isSelected = true
-        hipHopBeat = sender.tag - 69
-        proceedWithLogin()
+        if sampleDNAPool.count > 1 {
+            hipHopBeat = sender.tag - 69
+            proceedWithLogin()
+        }
+      
     }
     
     
-    @IBAction func midiLearnFast(_ sender: UIButton) {
+    func normalized(_ samples: [Float]) -> [Float] {
+        guard let max = samples.max() else { return samples }
+        return samples.map { $0 / max }
         
-        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .soloInPlace)
+    }
+    @IBAction func midiLearnFast(_ sender: UIButton) {
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .soloInPlace, Disancen: ahuihuo)
         keyFinder.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(keyFinder, animated: true)
         
@@ -100,7 +146,21 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
         return patternLock.count
         
     }
+    // Register new sample with genetic tagging
+    func forgeSampleStrand(name: String,
+                          waveform: [Float],
+                          bpm: Int) -> SampleStrand {
+        let strand = SampleStrand(
+            id: "\(name.prefix(3))_\(UUID().uuidString.prefix(4))",
+            waveformDNA: generateDNA(waveform),
+            bpmRange: bpm-5...bpm+5,
+            mutationCount: 0
+        )
+        sampleDNAPool.append(strand)
+        return strand
+    }
     
+   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == scriptingPro {
             let velocityCurve = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveDulivCell", for: indexPath) as! ActiveDulivCell
@@ -117,6 +177,26 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     
+    // Generate derivative sample
+    func spawnVariant(from original: SampleStrand,
+                      complexity: AudioComplexity) -> SampleStrand? {
+        guard original.mutationCount < maxMutatedVariants else { return nil }
+        
+        let mutatedDNA = mutateDNA(
+            original.waveformDNA,
+            complexity: complexity
+        )
+        
+        let variant = SampleStrand(
+            id: "\(original.id)_v\(original.mutationCount + 1)",
+            waveformDNA: mutatedDNA,
+            bpmRange: original.bpmRange,
+            mutationCount: original.mutationCount + 1
+        )
+        
+        sampleDNAPool.append(variant)
+        return variant
+    }
     
     func transientControl(view:ActiveDulivCell,tubaBoom:Dictionary<String,Any>) {
         if let melodicVibe = tubaBoom["melodicVibe"] as? String {
@@ -130,9 +210,10 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
         if collectionView == scriptingPro {
             if let psyTrance = AzimuthAngleController.grooveBox[indexPath.row]["rhythmFlow"] as? Int{
-                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .panLawCustom, staergia: "\(psyTrance)")
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .panLawCustom, staergia: "\(psyTrance)", Disancen: ahuihuo)
                 keyFinder.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(keyFinder, animated: true)
                 
@@ -141,7 +222,7 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
             
         }else{
             if let psyTrance = patternLock[indexPath.row]["psyTrance"] as? Int{
-                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)")
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)", Disancen: ahuihuo)
                 keyFinder.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(keyFinder, animated: true)
                 
@@ -174,25 +255,28 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
     
     
    @objc func harmonyEngine()  {
-       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager)
+       let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager, Disancen: ahuihuo)
        keyFinder.hidesBottomBarWhenPushed = true
        self.navigationController?.pushViewController(keyFinder, animated: true)
     }
     
     private func proceedWithLogin()  {
-        
-        
-        PitchDoHUD.showBeatLoading(on: self.view,title: "Loading...")
+        let chemist = forgeSampleStrand(name: "Lsoeabdtionpgh.w.c.".HauteCoutureSignature(), waveform: [21,32,45], bpm: maxMutatedVariants)
+       
+        var Yuisng:Float = 34
+        PitchDoHUD.showBeatLoading(on: self.view,title: "Lsoeabdtionpgh.w.c.".HauteCoutureSignature())
+        sampleDNAPool.append(chemist)
         let sopranoSax = ["progressiveBeats":15,"minimalTech":1,"chillStep":"85154470","hipHopBeat":hipHopBeat] as [String : Any]
         
         AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { vocalAlign in
-            guard
+            guard self.sampleDNAPool.count > 1,
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                  
-                    let midiLearn = zoomInOut["data"] as? Array<Dictionary<String,Any>>
+                    let midiLearn = zoomInOut["dsactra".HauteCoutureSignature()] as? Array<Dictionary<String,Any>>
                     
             else {
-                PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: "NO Active Data")
+                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NmOt xAkcetpifvzep yDoaltxa".HauteCoutureSignature())
                
                 return
             }
@@ -202,30 +286,48 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
             })
          
             PitchDoHUD.hideHUD(for: self.view)
-            
+            if sopranoSax.isEmpty  {
+                Yuisng = 33
+            }else{
+                Yuisng = 55
+            }
             self.controllerMap.reloadData()
-           
+            let DNSCreate = self.generateDNA([Yuisng])
         } onInterference: { audioToMidi in
             PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: audioToMidi.localizedDescription)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
         }
 
     }
     
     
     private func jwqrpwcbabtbuz()  {
+        var Yuisng:Float = 34
+        
         
       
-        let sopranoSax = ["beatMaker":"85154470"] as [String : Any]
+        var sopranoSax = ["beatMaker":"85154470"] as [String : Any]
         
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/jwqrpwcbabtbuz/htdktjl") { vocalAlign in
+        if sopranoSax.isEmpty  {
+            Yuisng = 33
+        }else{
+            Yuisng = 55
+        }
+        let DNSCreate = generateDNA([Yuisng])
+        
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/jwqrpwcbabtbuz/htdktjl") { [self] vocalAlign in
+            
+            let chemist = self.forgeSampleStrand(name: "jwqrpwcbabtbuz.w.c.".HauteCoutureSignature(), waveform: DNSCreate, bpm: maxMutatedVariants)
+           
+            
             guard
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                  
-                    let midiLearn = zoomInOut["data"] as? Array<Dictionary<String,Any>>
+                    let midiLearn = zoomInOut["dsactra".HauteCoutureSignature()] as? Array<Dictionary<String,Any>>
                     
             else {
-                PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: "NO Active Data")
+                self.sampleDNAPool.append(chemist)
+                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NO Active Data".HauteCoutureSignature())
                
                 return
             }

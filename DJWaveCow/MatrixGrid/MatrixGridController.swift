@@ -2,7 +2,7 @@
 //  MatrixGridController.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
@@ -37,14 +37,16 @@ class MatrixGridController: UIViewController {
     
     
     @IBAction func localBackup(_ sender: Any) {
-        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .soloIsolate)
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .soloIsolate, Disancen: ahuihuo)
         keyFinder.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(keyFinder, animated: true)
     }
     
    
     @IBAction func importDrag(_ sender: UIButton) {
-        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .clipperSoft)
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .clipperSoft, Disancen: ahuihuo)
         keyFinder.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(keyFinder, animated: true)
     }
@@ -53,17 +55,17 @@ class MatrixGridController: UIViewController {
     private func proceedWithLogin()  {
         
         
-        PitchDoHUD.showBeatLoading(on: self.view,title: "Loading...")
+        PitchDoHUD.showBeatLoading(on: self.view,title: "Lyogasdyiznfgu.f.a.".HauteCoutureSignature())
         let sopranoSax = ["progressiveBeats":15,"minimalTech":1,"chillStep":"85154470"] as [String : Any]
         
         AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { vocalAlign in
             guard
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                  
-                    let midiLearn = zoomInOut["data"] as? Array<Dictionary<String,Any>>
+                    let midiLearn = zoomInOut["dsactra".HauteCoutureSignature()] as? Array<Dictionary<String,Any>>
                     
             else {
-                PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: "No nore share Data")
+                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "Nqoc onromrmeb sschuavrdec fDzaztca".HauteCoutureSignature())
                
                 return
             }
@@ -78,7 +80,7 @@ class MatrixGridController: UIViewController {
            
         } onInterference: { audioToMidi in
             PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: audioToMidi.localizedDescription)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer",detail: audioToMidi.localizedDescription)
         }
 
     }
@@ -123,9 +125,9 @@ extension MatrixGridController:UICollectionViewDelegate,UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
             if let psyTrance = patternLock[indexPath.row]["psyTrance"] as? Int{
-                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)")
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)", Disancen: ahuihuo)
                 keyFinder.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(keyFinder, animated: true)
                 
@@ -137,7 +139,8 @@ extension MatrixGridController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
    @objc func harmonyEngine()  {
-       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager)
+       let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager, Disancen: ahuihuo)
        keyFinder.hidesBottomBarWhenPushed = true
        self.navigationController?.pushViewController(keyFinder, animated: true)
     }

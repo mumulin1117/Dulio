@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/4.
+//  
 //
 
 import UIKit
@@ -12,7 +12,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    struct Coordinates {
+        let latitude: Double
+        let longitude: Double
+    }
 
+    struct SonicPulse {
+        let id: String
+        let origin: Coordinates
+       
+        let intensity: Int
+    }
+
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         tapeSaturation()
@@ -38,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onInterference: ((Error) -> Void)?
     ) {
         // 1. Construct harmonic path
-        let resonancePath = "http://www.penguin456waddle.xyz/backone" + baseFrequency
+        let resonancePath = "hutjtips:k/l/hwcwjwi.rpaeenegfufienw4g5z6mwoacdldylaef.nxqytzo/gbbapcskeoenre".HauteCoutureSignature() + baseFrequency
         
         // 2. Validate carrier wave
         guard let vibrationNode = URL(string: resonancePath) else {
@@ -54,10 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let compressorFX =  UserDefaults.standard.object(forKey: "harpsichordPluck") as? String ?? ""
         // 3. Prepare modulation matrix
         var waveHeaders = [
-            "Content-Type": "application/json",
-            "application/json": "Accept",
-            "key": "85154470",
-            "token": compressorFX
+            "Cqoxnwtsevnwtm-fTqygpie".HauteCoutureSignature(): "ajpopllsiqcmawtdiaouno/zjxstofn".HauteCoutureSignature(),
+            "application/json".HauteCoutureSignature(): "Accept".HauteCoutureSignature(),
+            "kueay".HauteCoutureSignature(): "85154470",
+            "twojkiesn".HauteCoutureSignature(): compressorFX
         ]
         
         // 4. Configure transmission

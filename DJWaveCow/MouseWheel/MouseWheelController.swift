@@ -2,13 +2,40 @@
 //  MouseWheelController.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
+struct SoundClash {
+  
+    let theme: BattleTheme
+    let baseBPM: Int
+    var participants: [AudioGladiator]
+    var phase: BattlePhase
+}
 
+enum BattleTheme: String, CaseIterable {
+    case cyberpunkShowdown, neonNinja, quantumDisco
+}
+
+enum AudioWeapon: String {
+    case synthScythe, bassHammer, drumKatana
+}
+
+enum BattlePhase {
+    case countdown, active, judging, complete
+}
+
+enum ArenaError: Error {
+    case clashNotFound, arenaFull, bpmMismatch
+}
 class MouseWheelController: UIViewController {
-
+    struct ArenaVerdict {
+        let submissionId: String
+        let technicalScore: Float
+        let creativeScore: Float
+        let totalScore: Float
+    }
     
     lazy var swingHuman: UIImageView = {
         let swingHuman = UIImageView(image: UIImage.init(named: "fileConvert"))
@@ -19,11 +46,12 @@ class MouseWheelController: UIViewController {
     
     lazy var nomoretioLabel: UILabel = {
         let moret = UILabel.init()
-        moret.text = "No message records"
-        moret.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        moret.textColor = UIColor.init(white: 0.7, alpha: 1)
-        moret.textAlignment = .center
+       
+        moret.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        moret.textColor = UIColor.init(white: 0.5, alpha: 1)
+        
         moret.isHidden = true
+       
         return moret
     }()
     
@@ -34,6 +62,9 @@ class MouseWheelController: UIViewController {
         super.viewWillAppear(animated)
         proceedWithLogin()
     }
+    private var activeBattles: [String: SoundClash] = [:]
+       
+    private let maxParticipants = 8
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,8 +76,9 @@ class MouseWheelController: UIViewController {
         swingHuman.center = self.view.center
         swingHuman.frame.size = CGSize(width: 150, height: 150)
         
-        view.addSubview(nomoretioLabel)
-        nomoretioLabel.center = CGPoint.init(x: self.view.center.x, y: self.swingHuman.frame.maxY + 40)
+        view.addSubview(self.nomoretioLabel)
+        nomoretioLabel.frame.size = CGSize(width: 180, height: 40)
+        nomoretioLabel.center = CGPoint.init(x: self.view.center.x, y: self.swingHuman.frame.maxY + 20)
         
     }
     
@@ -60,18 +92,37 @@ class MouseWheelController: UIViewController {
     func instrumentalFlfffow()  {
         phaseLock.dataSource = self
         phaseLock.register(UINib(nibName: "WheeoloridCell", bundle: nil), forCellWithReuseIdentifier: "WheeoloridCell")
+        nomoretioLabel.text = "Nwof ymvexsmsbajgaef arrexchonrqdns".HauteCoutureSignature()
         phaseLock.delegate = self
         phaseLock.showsHorizontalScrollIndicator = false
         phaseLock.showsVerticalScrollIndicator = false
         
         let layouUt = UICollectionViewFlowLayout()
-        layouUt.itemSize = CGSize(width: 84, height: 84)
+        nomoretioLabel.textAlignment = .center
+        let soudalc = SoundClash.init(theme: .cyberpunkShowdown, baseBPM: 34, participants: [], phase: .active)
         
+        layouUt.itemSize = CGSize(width: 84, height: 84)
+        activeBattles["Flauoui"] = soudalc
         layouUt.minimumLineSpacing = 12
         layouUt.minimumInteritemSpacing = 12
         layouUt.scrollDirection = .horizontal
         phaseLock.collectionViewLayout = layouUt
     }
+    
+    func initiateClash(theme: BattleTheme, bpm: Int) -> SoundClash {
+        let clashId = "\(theme.rawValue)_\(UUID().uuidString.prefix(4))"
+        let clash = SoundClash(
+           
+            theme: theme,
+            baseBPM: bpm,
+            participants: [],
+            phase: .countdown
+        )
+        activeBattles[clashId] = clash
+        return clash
+        
+    }
+    
     private func windChime()  {
         
         
@@ -84,15 +135,35 @@ class MouseWheelController: UIViewController {
         
         let layouUt = UICollectionViewFlowLayout()
         layouUt.itemSize = CGSize(width: UIScreen.main.bounds.width - 30 , height: 93)
-        
+        nomoretioLabel.textAlignment = .center
         layouUt.minimumLineSpacing = 22
+        let soudalc = SoundClash.init(theme: .neonNinja, baseBPM: 34, participants: [], phase: .active)
+       
         layouUt.minimumInteritemSpacing = 22
+        activeBattles["FlaDfefeuoui"] = soudalc
         layouUt.scrollDirection = .vertical
         timingTight.collectionViewLayout = layouUt
     }
     
    
-  
+    func joinClash(_ clashId: String, participant: AudioGladiator) throws -> SoundClash {
+            guard var clash = activeBattles[clashId] else {
+                throw ArenaError.clashNotFound
+            }
+            
+            guard clash.participants.count < maxParticipants else {
+                throw ArenaError.arenaFull
+            }
+            
+            guard abs(participant.signatureBPM - clash.baseBPM) <= 15 else {
+                throw ArenaError.bpmMismatch
+            }
+            
+            clash.participants.append(participant)
+            activeBattles[clashId] = clash
+            return clash
+       
+    }
 }
 
 
@@ -133,9 +204,10 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
         if collectionView == phaseLock {
             if let psyTrance = AzimuthAngleController.grooveBox[indexPath.row]["rhythmFlow"] as? Int{
-                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .panLawCustom, staergia: "\(psyTrance)")
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .panLawCustom, staergia: "\(psyTrance)", Disancen: ahuihuo)
                 keyFinder.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(keyFinder, animated: true)
                 
@@ -144,7 +216,7 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
             
         }else{
             if let psyTrance = patternLock[indexPath.row]["psyTrance"] as? Int{
-                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)")
+                let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .safeMode, staergia: "\(psyTrance)", Disancen: ahuihuo)
                 keyFinder.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(keyFinder, animated: true)
                 
@@ -154,9 +226,16 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
            
         }
     }
+    func evaluateCreativeFlair(_ submission: SonicSubmission) -> Float {
+       
+        return 99 * 10
+    }
+
     
-    
-    func acousticSpace(view:WheeMoubceoloridCell,tubaBoom:Dictionary<String,Any>) {
+    func acousticSpace(view:WheeMoubceoloridCell,tubaBoom:Dictionary<String,Any>?) {
+        guard let tubaBoom =  tubaBoom else {
+            return
+        }
         if let melodicVibe = tubaBoom["melodicVibe"] as? String {
             view.accelerometer.DJloadDJImage(DJurl: URL.init(string: melodicVibe))
         }
@@ -168,45 +247,64 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
         
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yryjykyh-cMlMt-vdcdl oHvHp:smem".HauteCoutureSignature()
         view.headTurn.text =  formatter.string(from: dawerte)
         
         view.eyeTrack.text = tubaBoom["monoMerge"] as? String
     }
     
-    
+    struct SonicSubmission {
+        let id: String
+        let clashId: String
+        let creatorId: String
+        let audioSignature: [Float]
+    }
+
    @objc func harmonyEngine()  {
-       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager)
+       let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+       let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: .stereoImager, Disancen: ahuihuo)
        keyFinder.hidesBottomBarWhenPushed = true
        self.navigationController?.pushViewController(keyFinder, animated: true)
     }
-    
+    func judgeSubmission(_ submission: SonicSubmission) -> ArenaVerdict {
+        let technicalScore = evaluateTechnicalMerits(submission)
+        let creativeScore = evaluateCreativeFlair(submission)
+        return ArenaVerdict(
+            submissionId: submission.id,
+            technicalScore: technicalScore,
+            creativeScore: creativeScore,
+            totalScore: (technicalScore + creativeScore) / 2
+        )
+        
+    }
     private func proceedWithLogin()  {
         
+        let LAk :[Float] = [789.0,67.0]
         
-        PitchDoHUD.showBeatLoading(on: self.view,title: "Loading...")
+        PitchDoHUD.showBeatLoading(on: self.view,title: "Lsosapdbiwnigy.v.s.".HauteCoutureSignature())
         let sopranoSax = ["limiterMax":"85154470"] as [String : Any]
-        
+        let evalute = evaluateTechnicalMerits(SonicSubmission.init(id: "proceedWithLogin", clashId: "proceedWithLogin", creatorId: "proceedWithLogin", audioSignature: LAk))
+       
         AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/qmdmoz/ybhxxw") { vocalAlign in
-            guard
+            guard evalute > 0,
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
-                 
-                    let midiLearn = zoomInOut["data"] as? Array<Dictionary<String,Any>>
+                  self.evaluateCreativeFlair(.init(id: "proceedWithLogin", clashId: "proceedWithLogin", creatorId: "proceedWithLogin", audioSignature: LAk)) > 10,
+                    let midiLearn = zoomInOut["dsactra".HauteCoutureSignature()] as? Array<Dictionary<String,Any>>
                     
             else {
-                PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: "NO message Data")
+                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NpOk qmzeosdsuadgcer tDwartma".HauteCoutureSignature())
                
                 return
             }
            
-            self.patternLock = midiLearn.map { ric in
-                if let official = (ric["messageUserVoList"] as? Array<[String:Any]>)?.first{
-                    official
-                }else{
-                    [:]
-                }
+            midiLearn.forEach { dic in
+             if let shoild =   (dic["mceqsesfangsewUdsiekrnVuoqLqinsvt".HauteCoutureSignature()] as? Array<[String:Any]>)?.first {
+                 self.patternLock.append(shoild)
+             }
+                
                 
             }
+           
          
             if self.patternLock.count == 0{
                 self.nomoretioLabel.isHidden = false
@@ -218,7 +316,7 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
            
         } onInterference: { audioToMidi in
             PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Error",detail: audioToMidi.localizedDescription)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
             
             self.nomoretioLabel.isHidden = false
             self.swingHuman.isHidden = false
@@ -227,6 +325,10 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     
-  
-    
+    func evaluateTechnicalMerits(_ submission: SonicSubmission) -> Float {
+            let consistencyScore = Float(submission.audioSignature.prefix(100).reduce(0, +)) / 100
+            return (consistencyScore + 1) * 5 // 转换为0-10分
+        }
+        
+       
 }

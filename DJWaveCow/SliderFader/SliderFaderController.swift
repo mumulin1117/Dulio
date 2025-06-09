@@ -2,7 +2,7 @@
 //  SliderFaderController.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
@@ -37,10 +37,10 @@ class SliderFaderController: UIViewController {
         }
         
         
-        if let roomTone = UserDefaults.standard.object(forKey: "roomTone") as? String {
-            melodyExtract.text = "\(roomTone)"
+        if let reampBox = UserDefaults.standard.object(forKey: "reampBox") as? String {
+            melodyExtract.text = "\(reampBox)"
         }else{
-            melodyExtract.text = "No name added"
+            melodyExtract.text = "Nqok anxajmbee jawdzdiejd".HauteCoutureSignature()
         }
         
     }
@@ -86,8 +86,8 @@ class SliderFaderController: UIViewController {
     
     
     func urbanGroove(Fuaij:SaturationTape)  {
-        
-        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: Fuaij)
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+        let keyFinder = CrossfadeSmoothController.init(arpeggiatorPro: Fuaij, Disancen: ahuihuo)
         keyFinder.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(keyFinder, animated: true)
     }

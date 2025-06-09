@@ -2,11 +2,17 @@
 //  MopnmenDulivCell.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
-
+enum AudioComplexity: Int {
+    case micro = 1, nano = 2, pico = 3
+    
+    var mutationFactor: Float {
+        Float(rawValue) * 0.33
+    }
+}
 class MopnmenDulivCell: UICollectionViewCell {
 
     @IBOutlet weak var workflowBoost: UIPageControl!

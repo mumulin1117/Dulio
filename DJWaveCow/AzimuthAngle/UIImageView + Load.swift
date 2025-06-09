@@ -7,7 +7,11 @@
 
 import UIKit
 import SDWebImage
-
+extension Float {
+    func clamped(to range: ClosedRange<Float>) -> Float {
+        min(max(self, range.lowerBound), range.upperBound)
+    }
+}
 // MARK: - Image Loading with Cache Strategies
 extension UIImageView {
     

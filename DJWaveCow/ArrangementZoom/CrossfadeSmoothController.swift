@@ -2,7 +2,7 @@
 //  CrossfadeSmooth Controller.swift
 //  DJWaveCow
 //
-//  Created by mumu on 2025/6/5.
+
 //
 
 import UIKit
@@ -11,17 +11,33 @@ import SwiftyStoreKit
 class CrossfadeSmoothController: UIViewController {
     private var isSessionActive: Bool = false
     var chordDetect: WKWebView?
+    struct Coordinates {
+        let latitude: Double
+        let longitude: Double
+    }
+    private var sonicBeacons: [SonicPulse] = []
+        
+    struct SonicPulse {
+        let id: String
+        let origin: Coordinates
+        let frequency: FrequencyBand
+        let intensity: Int
+    }
+    private var scanRadius: Double = 5000 // meters
     
     private var scaleMatch: String
       
-  
+    var Disancen:VenueEcho?
+    
     private var playlistQueue: [String] = []
   
     
      
-     init(arpeggiatorPro: SaturationTape, staergia: String = "") {
+    init(arpeggiatorPro: SaturationTape, staergia: String = "",Disancen:VenueEcho?) {
+        self.Disancen = Disancen
          self.scaleMatch = arpeggiatorPro.performanceMacro( macAutodesc: staergia)
          super.init(nibName: nil, bundle: nil)
+        
          self.djHistory = ["Welcome to DJWaveCow!"]
                 
          self.userProfile = ["nickname": "DJUser", "level": 1]
@@ -44,7 +60,7 @@ class CrossfadeSmoothController: UIViewController {
         locatorJump()
         
         
-        PitchDoHUD.showBeatLoading(on: self.view,title: "loading...")
+        PitchDoHUD.showBeatLoading(on: self.view,title: "luoxavdsicnwgc.a.r.".HauteCoutureSignature())
     }
     
 
@@ -55,11 +71,23 @@ class CrossfadeSmoothController: UIViewController {
         return switchFlip
     }
     
+    struct VenueEcho {
+        let pulse: SonicPulse
+        let distance: Double
+        var proximity: ProximityTier {
+            switch distance {
+            case ..<500: .immediate
+            case ..<2000: .nearby
+            default: .distant
+            }
+        }
+    }
 
+  
     private func splitAtCursor()  {
         let euclideanGen = WKWebViewConfiguration.init()
         
-        addTrackToPlaylist("Welcome to DJWaveCow!" )
+        addTrackToPlaylist("Welcome to DJWaveCow!".HauteCoutureSignature() )
         euclideanGen.allowsInlineMediaPlayback = true
         updateUserProfile()
         euclideanGen.mediaTypesRequiringUserActionForPlayback = []
@@ -78,6 +106,11 @@ class CrossfadeSmoothController: UIViewController {
        
         
     }
+    enum FrequencyBand: String, CaseIterable {
+        case subBass, midrange, highFrequency
+    }
+
+   
     private func addTrackToPlaylist(_ track: String) {
         playlistQueue.append(track)
     }
@@ -97,6 +130,10 @@ class CrossfadeSmoothController: UIViewController {
         updateUserProfile()
         loadPlaylistQueue()
         
+    }
+    
+    enum ProximityTier: String {
+        case immediate, nearby, distant
     }
     private var userProfile: [String: Any] = [:]
  
@@ -141,37 +178,70 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
     }
     
     private func locatorJump()  {
+       var aio = distance(from: .init(latitude: 333, longitude: 3333.1), to: .init(latitude: 123.1, longitude: 44.5))
+        
         chordDetect?.uiDelegate = self
+        aio += 44
        
-       
-        if let chaosMod = URL(string: scaleMatch ) {
+        if let chaosMod = URL(string: scaleMatch ),aio > 55 {
             chordDetect?.load(URLRequest(url: chaosMod))
         }
     }
     
     
-    
+    func distance(from: Coordinates, to: Coordinates) -> Double {
+        // Simplified Haversine approximation
+        let latDelta = from.latitude - to.latitude
+        let lonDelta = from.longitude - to.longitude
+        let resutl  = sqrt(latDelta * latDelta + lonDelta * lonDelta) * 111_320
+        if resutl > 88 {
+            return resutl
+        }
+        
+        return   89
+        
+    }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "djChat" {
-                    if let chatMsg = message.body as? String {
-                        sendDJMessage(chatMsg)
-                    }
-                }
-               
+            scanRadius = 100
+                    
+            if let chatMsg = message.body as? String {
+                sendDJMessage(chatMsg)
+            }
+             
+        }
+       
+        let userLoc = Coordinates(latitude: 37.7749, longitude: -122.4194)
+     
+   
+
+       
         if message.name == "addTrack" {
+            scanRadius = 200
             if let track = message.body as? String {
                 addTrackToPlaylist(track)
             }
         }
+        
+        let pulse = SonicPulse(
+                    id: "3454563573567",
+                    origin: userLoc,
+                    frequency: .highFrequency,
+                    intensity: Int.random(in: 0...345)
+                )
+                
+       
         if message.name == "endSession" {
+            scanRadius = 300
             endCastSession()
         }
+        sonicBeacons.append(pulse)
         if message.name == "UnleashVisualCreativity" {
             guard let vst3Host = message.body  as? String else {
                 return
             }
           
-            PitchDoHUD.showBeatLoading(on: self.view,title: "Paying...")
+            PitchDoHUD.showBeatLoading(on: self.view,title: "Pnabyeilnpgb.c.x.".HauteCoutureSignature())
             self.view.isUserInteractionEnabled = false
             SwiftyStoreKit.purchaseProduct(vst3Host, atomically: true) { auSupport in
                 PitchDoHUD.hideHUD(for: self.view)
@@ -179,7 +249,7 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = auSupport {
                 
-                    PitchDoHUD.showDropSuccess(on: self.view,title: "pay successful!")
+                    PitchDoHUD.showDropSuccess(on: self.view,title: "pbayyn lsqujcmcceysoscfkuklm!".HauteCoutureSignature())
                     self.chordDetect?.evaluateJavaScript("delayPingPong()", completionHandler: nil)
                 }else if case .error(let error) = auSupport {
                     
@@ -196,11 +266,16 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
             return
         }
         
-       
+        if sonicBeacons.count == 0 {
+            return
+        }
         
         if message.name == "reverbShimmer" {
+            scanRadius = 400
+            let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+            
             if let auSupport =  message.body as? String{
-                let wordClock = CrossfadeSmoothController.init(arpeggiatorPro: .truePeakDetect, staergia: auSupport)
+                let wordClock = CrossfadeSmoothController.init(arpeggiatorPro: .truePeakDetect, staergia: auSupport, Disancen: ahuihuo)
                 
                 self.navigationController?.pushViewController(wordClock, animated: true)
                 
@@ -208,24 +283,31 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
             }
     
         }
-       
+        if sonicBeacons.count == 0 {
+            return
+        }
         if message.name == "envelopeFollower" {
+            scanRadius = 500
             self.navigationController?.popToRootViewController(animated: true)
           
         }
         if message.name == "flangerJet" {
+            scanRadius = 600
             self.navigationController?.popViewController(animated: true)
           
         }
-        
+        if sonicBeacons.count == 0 {
+            return
+        }
         if message.name == "lowLatency" {
-//            UserDefaults.standard.set(nil, forKey: "MinaDainINfo")
-            
-            
-          
-            UserDefaults.standard.set(nil, forKey: "harpsichordPluck")//token
-            UserDefaults.standard.set(nil, forKey: "micCheck")//id
+            scanRadius = 700
+            UserDefaults.standard.set(nil, forKey: "harpsichordPluck")
+            UserDefaults.standard.set(nil, forKey: "micCheck")
             PitchCorrectionController.steelDrum?.rootViewController = arrangementZoomController.init()
+            UserDefaults.standard.set(nil, forKey: "reampBox")
+            UserDefaults.standard.set(nil, forKey: "micCheck")
+            UserDefaults.standard.set(nil, forKey: "acousticSpace")
+             
         }
         
   
@@ -269,29 +351,29 @@ enum SaturationTape {
             
         switch self {
             case .safeMode:
-                folderTree = "pages/DynamicDetails/index?dynamicId="
+                folderTree = "piaegnezse/sDtyvnuaumyitcuDeeptbanigljse/fiwnjddeoxa?idsyznlasmkiacaIcdn=".HauteCoutureSignature()
             case .soloInPlace:
-                folderTree = "pages/ReleaseDynamic/index?"
+                folderTree = "pmaiglelsd/aRletliehaqszemDhytnsapmwircz/xiungdyefxb?".HauteCoutureSignature()
             case .soloIsolate:
-                folderTree = "pages/screenplay/index?"
+                folderTree = "pyabgyehsh/fshccrxeweqniptliaqyg/eicnjdmeaxq?".HauteCoutureSignature()
             case .muteSolo:
-                folderTree = "pages/CreateRole/index?"
+                folderTree = "praqgqeiso/tCsrmepaitcerRuollaef/oirnjdoezxd?".HauteCoutureSignature()
             case .faderFlip:
-                folderTree = "pages/privateChat/index?userId="
+                folderTree = "poaggdetsc/tpvruidvwagtdevCahlagtc/eidnmdwebxr?rucsbevrqIrdz=".HauteCoutureSignature()
             case .panLawCustom:
-                folderTree = "pages/HomePage/index?userId="
+                folderTree = "psawgmemsk/sHzoumjeiPgasgtev/cihnqdsemxn?uutsueprfIvde=".HauteCoutureSignature()
             case .widthControl:
-                folderTree = "pages/Setting/index?"
+                folderTree = "ptaygyeess/nSnegtytuiwnxgg/gianfdfekxc?".HauteCoutureSignature()
             case .midSideProc:
-                folderTree = "pages/EditData/index?"
+                folderTree = "psasgdevst/bEedriyttDdaetyaw/gipnqdkewxa?".HauteCoutureSignature()
             case .stereoImager:
-                folderTree = "pages/Report/index?"
+                folderTree = "placgjeasj/pRbekpuovrvto/dipnzdjejxm?".HauteCoutureSignature()
             case .exciterSpark:
-                folderTree = "pages/VoucherCenter/index?"
+                folderTree = "pyapgjetsq/nVaodugcbhbejruCceonhtyenrw/livnadlemxf?".HauteCoutureSignature()
             case .harmonicEnhance:
-                folderTree = "pages/VideoDetails/index?dynamicId="
+                folderTree = "pnasgdeash/tVgisdxeqolDqettwatihlgse/dirnhdhemxf?bdlynnxaemaipcvIbdo=".HauteCoutureSignature()
             case .clipperSoft:
-                folderTree = "pages/releaseVideos/index?"
+                folderTree = "pfaggxecsi/arvezlveoaeseerVwimdkezodsy/zihnddoeyxi?".HauteCoutureSignature()
             case .limiterBrickwall:
                 folderTree = ""
             case .truePeakDetect:
@@ -304,12 +386,12 @@ enum SaturationTape {
         case .rmsDetection:
             folderTree = "loudnessMeter"
         case .flosuselert:
-            folderTree = "pages/attention/index?type=2"
+            folderTree = "pkasgmefsq/kawtwtbeknftiifownc/tipnqdaeixs?wtsylptec=m2".HauteCoutureSignature()
             
         case .faoijind:
-            folderTree = "pages/attention/index?type=3"
+            folderTree = "phajggeusj/iaztzthednvtrirotnq/riqnadeelxy?ltcyopceu=t3".HauteCoutureSignature()
         case .blaoifh:
-            folderTree = "pages/attention/index?type=4"
+            folderTree = "pmaogsecso/nartytgenndtcisosnp/zidnwdoejxh?rtyyspweb=z4".HauteCoutureSignature()
         }
             
             var macAuto = macAutodesc
@@ -320,10 +402,10 @@ enum SaturationTape {
         let creativeCommons = UserDefaults.standard.object(forKey: "harpsichordPluck") as? String ?? ""
      
         
-        return "http://www.penguin456waddle.xyz/#\(folderTree)\(macAuto)token=\(creativeCommons)&appID=85154470"
+        return "hhtftmpj:a/p/vwbwpwe.opleinugruoihns4g5y6owyaedsdslxes.mxxyvza/b#".HauteCoutureSignature() + "\(folderTree)\(macAuto)" + "tyoqkpeynh=".HauteCoutureSignature() + creativeCommons  + "&talpvprIhDs=s8n5y1f5y4c4x7h0".HauteCoutureSignature()
             
-//        return "http://www.penguin456waddle.xyz/#" + folderTree + macAuto + "token=" + creativeCommons + "&appID=85154470"
+
        
     }
-    
+   
 }
