@@ -31,10 +31,13 @@ class CrossfadeSmoothController: UIViewController {
     
     private var playlistQueue: [String] = []
   
+    var Pauuo: SaturationTape
+    
     
      
     init(arpeggiatorPro: SaturationTape, staergia: String = "",Disancen:VenueEcho?) {
         self.Disancen = Disancen
+        self.Pauuo = arpeggiatorPro
          self.scaleMatch = arpeggiatorPro.performanceMacro( macAutodesc: staergia)
          super.init(nibName: nil, bundle: nil)
         
@@ -289,11 +292,18 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
         if message.name == "envelopeFollower" {
             scanRadius = 500
             self.navigationController?.popToRootViewController(animated: true)
+            if self.Pauuo == .Headeache || self.Pauuo == .pain {
+                self.dismiss(animated: true)
+            }
+           
           
         }
         if message.name == "flangerJet" {
             scanRadius = 600
             self.navigationController?.popViewController(animated: true)
+            if self.Pauuo == .Headeache || self.Pauuo == .pain {
+                self.dismiss(animated: true)
+            }
           
         }
         if sonicBeacons.count == 0 {
@@ -345,6 +355,8 @@ enum SaturationTape {
    case flosuselert
     case faoijind
     case blaoifh
+    case Headeache
+    case pain
     func performanceMacro( macAutodesc: String = "") -> String {
            
         var folderTree: String
@@ -392,6 +404,10 @@ enum SaturationTape {
             folderTree = "phajggeusj/iaztzthednvtrirotnq/riqnadeelxy?ltcyopceu=t3".HauteCoutureSignature()
         case .blaoifh:
             folderTree = "pmaogsecso/nartytgenndtcisosnp/zidnwdoejxh?rtyyspweb=z4".HauteCoutureSignature()
+        case .Headeache:
+            folderTree = "psapgreusw/qAxgvrxetekmoefndtz/jilnudreoxd?btrydpfeu=b1y&".HauteCoutureSignature()
+        case .pain:
+            folderTree = "praugxetsv/sAagbrsezedmbefnttg/siknvdreaxx?atlydpjef=s24&".HauteCoutureSignature()
         }
             
             var macAuto = macAutodesc

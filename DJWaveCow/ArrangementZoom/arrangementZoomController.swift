@@ -17,8 +17,14 @@ class arrangementZoomController: UIViewController {
     private let harmonyMatrix: [Float] = [0.2, 0.5, 0.8] // Harmonic ratios
     @IBOutlet weak var clockSync: UIButton!
     
+    @IBOutlet weak var painhu: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        AgreenTErmUser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(painHeaderPgestu(jerst:))))
+        
+        painhu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(painHeaderPgestu(jerst:))))
+        
+        
         signature = spawnRhythmicPattern(bpm: 55, genre: .neurofunk)
         oscillatorSync()
     }
@@ -153,6 +159,25 @@ class arrangementZoomController: UIViewController {
             PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
         }
 
+    }
+    
+    @IBOutlet weak var AgreenTErmUser: UILabel!
+    
+   @objc func painHeaderPgestu(jerst:UITapGestureRecognizer)  {
+        let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
+        
+       if jerst.view == self.painhu {
+           let wordClock = CrossfadeSmoothController.init(arpeggiatorPro: .pain, Disancen: ahuihuo)
+           
+           self.present(wordClock, animated: true)
+          
+           return
+       }
+       
+       let wordClock = CrossfadeSmoothController.init(arpeggiatorPro: .Headeache, Disancen: ahuihuo)
+       
+       self.present(wordClock, animated: true)
+        
     }
     
     enum WaveformGenre: String, CaseIterable {

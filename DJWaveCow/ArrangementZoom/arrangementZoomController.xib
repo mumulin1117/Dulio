@@ -11,9 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="arrangementZoomController" customModule="DJWaveCow" customModuleProvider="target">
             <connections>
+                <outlet property="AgreenTErmUser" destination="fIH-gL-pT0" id="yD9-VW-tb3"/>
                 <outlet property="chaosFX" destination="570-Im-qXg" id="qs5-T6-bwa"/>
                 <outlet property="clockSync" destination="G4z-Yf-SPP" id="eS8-N9-W9z"/>
                 <outlet property="noiseReduction" destination="zN4-gj-hna" id="dCI-ht-F9p"/>
+                <outlet property="painhu" destination="UHJ-NZ-q2D" id="zc8-0A-wHx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +27,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grooveBox" translatesAutoresizingMaskIntoConstraints="NO" id="RBA-Gd-TEC">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Agreement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIH-gL-pT0">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Agreement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIH-gL-pT0">
                     <rect key="frame" x="253" y="783" width="92" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.98431372549019602" green="0.050980392156862744" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,7 +83,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHJ-NZ-q2D">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHJ-NZ-q2D">
                     <rect key="frame" x="157" y="803" width="79" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.98431372549999996" green="0.050980392159999999" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
