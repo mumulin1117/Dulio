@@ -285,7 +285,13 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
         let sopranoSax = ["limiterMax":"85154470"] as [String : Any]
         let evalute = evaluateTechnicalMerits(SonicSubmission.init(id: "proceedWithLogin", clashId: "proceedWithLogin", creatorId: "proceedWithLogin", audioSignature: LAk))
        
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/qmdmoz/ybhxxw") { vocalAlign in
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/qmdmoz/ybhxxw")   { audioToMidi in
+            PitchDoHUD.hideHUD(for: self.view)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
+            
+            self.nomoretioLabel.isHidden = false
+            self.swingHuman.isHidden = false
+        }onSyncComplete:{ vocalAlign in
             guard evalute > 0,
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                   self.evaluateCreativeFlair(.init(id: "proceedWithLogin", clashId: "proceedWithLogin", creatorId: "proceedWithLogin", audioSignature: LAk)) > 10,
@@ -314,12 +320,6 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
             
             self.timingTight.reloadData()
            
-        } onInterference: { audioToMidi in
-            PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
-            
-            self.nomoretioLabel.isHidden = false
-            self.swingHuman.isHidden = false
         }
 
     }

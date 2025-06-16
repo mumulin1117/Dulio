@@ -218,11 +218,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DJWaveCow/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dulio;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Unleash your visual creativity! Grant camera access to capture live DJ performances, mix sessions, and epic light shows—turning real-world moments into shareable beats.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your mic is our studio. Analyze crowd reactions, record impromptu remixes, or collaborate on live sets—every sound inspires the next drop.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Sync your musical identity. Import custom album art, sample packs, or venue photos to blend visuals with your signature sound.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -255,11 +256,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DJWaveCow/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dulio;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Unleash your visual creativity! Grant camera access to capture live DJ performances, mix sessions, and epic light shows—turning real-world moments into shareable beats.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your mic is our studio. Analyze crowd reactions, record impromptu remixes, or collaborate on live sets—every sound inspires the next drop.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Sync your musical identity. Import custom album art, sample packs, or venue photos to blend visuals with your signature sound.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

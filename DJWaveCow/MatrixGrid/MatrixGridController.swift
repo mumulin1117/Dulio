@@ -58,7 +58,10 @@ class MatrixGridController: UIViewController {
         PitchDoHUD.showBeatLoading(on: self.view,title: "Lyogasdyiznfgu.f.a.".HauteCoutureSignature())
         let sopranoSax = ["progressiveBeats":15,"minimalTech":1,"chillStep":"85154470"] as [String : Any]
         
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { vocalAlign in
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { audioToMidi in
+            PitchDoHUD.hideHUD(for: self.view)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer",detail: audioToMidi.localizedDescription)
+        }onSyncComplete:{ vocalAlign in
             guard
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                  
@@ -78,9 +81,6 @@ class MatrixGridController: UIViewController {
             
             self.sampleAccurate.reloadData()
            
-        } onInterference: { audioToMidi in
-            PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer",detail: audioToMidi.localizedDescription)
         }
 
     }

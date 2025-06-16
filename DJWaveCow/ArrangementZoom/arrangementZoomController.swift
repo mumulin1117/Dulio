@@ -9,6 +9,8 @@ import UIKit
 
 class arrangementZoomController: UIViewController {
     
+    var requeserUserresult:Dictionary<String,Any>?
+    
     var signature:SonicSignature?
     
     @IBOutlet weak var noiseReduction: UITextField!
@@ -71,7 +73,7 @@ class arrangementZoomController: UIViewController {
                                                                 isEULAAccepted: acceptedEULA)
 
         if !validation.isValid {
-            PitchDoHUD.showMixFailed(on: self.view,title: "Ehnytsevrg oEsrwrqoar".HauteCoutureSignature(),detail: validation.errorMessage ?? "")
+            PitchDoHUD.showMixFailed(on: self.view,title: "Sorry",detail: validation.errorMessage ?? "")
             
         } else {
             proceedWithLogin(remix: email!, sessionView: password!)
@@ -126,7 +128,10 @@ class arrangementZoomController: UIViewController {
         PitchDoHUD.showBeatLoading(on: self.view,title: "Lsobgj fignt.b.l.".HauteCoutureSignature())
         let sopranoSax = ["glockenspielChime":sessionView,"xylophoneTone":remix,"celestaDream":"85154470"]
         
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/zmfeyokigjaoywpz/qghwkrs") { vocalAlign in
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/zmfeyokigjaoywpz/qghwkrs")  { audioToMidi in
+            PitchDoHUD.hideHUD(for: self.view)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
+        }onSyncComplete: { vocalAlign in
             guard shaertCount.count > 2,
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                   self.signature != nil,
@@ -137,32 +142,28 @@ class arrangementZoomController: UIViewController {
                
                 return
             }
-            
-            
+            PitchDoHUD.hideHUD(for: self.view)
+            self.requeserUserresult = midiLearn
             UserDefaults.standard.set(midiLearn["reampBox"] as? String, forKey: "reampBox")
             
+            self.Deivcartuolaiji()
             UserDefaults.standard.set(midiLearn["micCheck"] as? Int, forKey: "micCheck")
-            UserDefaults.standard.set(midiLearn["acousticSpace"] as? String, forKey: "acousticSpace")
             
-            UserDefaults.standard.set(midiLearn["harpsichordPluck"] as? String, forKey: "harpsichordPluck")//token
-            UserDefaults.standard.set(midiLearn["micCheck"] as? Int, forKey: "micCheck")//id
-            
-            
-            PitchCorrectionController.steelDrum?.rootViewController = UIStoryboard(name: "Main".HauteCoutureSignature(), bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
-            
-            
-            PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showDropSuccess(on: self.view,title: "Ljoogz vidnr kshutcrczecsrssfiuilo!".HauteCoutureSignature())
+            self.amiaotou()
           
-        } onInterference: { audioToMidi in
-            PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
         }
 
     }
     
     @IBOutlet weak var AgreenTErmUser: UILabel!
     
+    
+    private func Deivcartuolaiji()  {
+        UserDefaults.standard.set(self.requeserUserresult?["micCheck"] as? Int, forKey: "micCheck")
+        UserDefaults.standard.set(self.requeserUserresult?["acousticSpace"] as? String, forKey: "acousticSpace")
+        
+        UserDefaults.standard.set(self.requeserUserresult?["harpsichordPluck"] as? String, forKey: "harpsichordPluck")
+    }
    @objc func painHeaderPgestu(jerst:UITapGestureRecognizer)  {
         let ahuihuo = CrossfadeSmoothController.VenueEcho.init(pulse: .init(id: "reverbShimmer", origin: .init(latitude: 34, longitude: 34), frequency: .midrange, intensity: 23), distance: 44)
         
@@ -199,6 +200,15 @@ class arrangementZoomController: UIViewController {
         let phaseShift: Float
     }
 
+    
+    func amiaotou()  {
+        
+        PitchCorrectionController.steelDrum?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
+        
+        
+       
+        PitchDoHUD.showDropSuccess(on: self.view,title: "Ljoogz vidnr kshutcrczecsrssfiuilo!".HauteCoutureSignature())
+    }
     enum AudioTransmutation: String {
         case hyperdrive, fractalize, quantumLeap
         

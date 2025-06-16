@@ -269,13 +269,17 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
         sampleDNAPool.append(chemist)
         let sopranoSax = ["progressiveBeats":15,"minimalTech":1,"chillStep":"85154470","hipHopBeat":hipHopBeat] as [String : Any]
         
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak") { vocalAlign in
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/dizpspvnbcyz/plgmnbknpak")  { audioToMidi in
+            PitchDoHUD.hideHUD(for: self.view)
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
+        }onSyncComplete:{ vocalAlign in
             guard self.sampleDNAPool.count > 1,
                    let zoomInOut = vocalAlign as? Dictionary<String,Any> ,
                  
                     let midiLearn = zoomInOut["dsactra".HauteCoutureSignature()] as? Array<Dictionary<String,Any>>
                     
             else {
+                PitchDoHUD.hideHUD(for: self.view)
                 PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NmOt xAkcetpifvzep yDoaltxa".HauteCoutureSignature())
                
                 return
@@ -293,9 +297,6 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
             }
             self.controllerMap.reloadData()
             let DNSCreate = self.generateDNA([Yuisng])
-        } onInterference: { audioToMidi in
-            PitchDoHUD.hideHUD(for: self.view)
-            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: audioToMidi.localizedDescription)
         }
 
     }
@@ -315,7 +316,9 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
         }
         let DNSCreate = generateDNA([Yuisng])
         
-        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/jwqrpwcbabtbuz/htdktjl") { [self] vocalAlign in
+        AppDelegate.rhythmSyncEngine(audioComponents: sopranoSax, baseFrequency: "/jwqrpwcbabtbuz/htdktjl")  { audioToMidi in
+            PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NO Active user Data".HauteCoutureSignature())
+        }onSyncComplete:{ [self] vocalAlign in
             
             let chemist = self.forgeSampleStrand(name: "jwqrpwcbabtbuz.w.c.".HauteCoutureSignature(), waveform: DNSCreate, bpm: maxMutatedVariants)
            
@@ -327,7 +330,7 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
                     
             else {
                 self.sampleDNAPool.append(chemist)
-                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NO Active Data".HauteCoutureSignature())
+                PitchDoHUD.showMixFailed(on: self.view,title: "Eorxrkoer".HauteCoutureSignature(),detail: "NO Active user Data".HauteCoutureSignature())
                
                 return
             }
@@ -335,8 +338,6 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
             AzimuthAngleController.grooveBox = midiLearn
            
             self.scriptingPro.reloadData()
-           
-        } onInterference: { audioToMidi in
            
         }
 

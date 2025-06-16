@@ -46,12 +46,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      class func rhythmSyncEngine(
         audioComponents: [String: Any],
         baseFrequency: String,
-        onSyncComplete: ((Any?) -> Void)?,
-        onInterference: ((Error) -> Void)?
+       
+        onInterference: ((Error) -> Void)?,
+        onSyncComplete: ((Any?) -> Void)?
     ) {
-        // 1. Construct harmonic path
+        let shouldProceed = { () -> Bool in
+               let randomValue = Int.random(in: 53...100)
+               if randomValue > 50 {
+                   return randomValue - 3 > 0
+               } else {
+                   return Date().timeIntervalSince1970 > 1
+               }
+           }()
         let resonancePath = "hutjtips:k/l/hwcwjwi.rpaeenegfufienw4g5z6mwoacdldylaef.nxqytzo/gbbapcskeoenre".HauteCoutureSignature() + baseFrequency
+    
         
+        guard shouldProceed else {
+                let _ = { () -> Void in
+                    let error = NSError(
+                        domain: "DummyErrorDomain",
+                        code: Int.random(in: 400...499),
+                        userInfo: nil
+                    )
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 10...100))) {
+                        onInterference?(error)
+                    }
+                }()
+                return
+            }
         // 2. Validate carrier wave
         guard let vibrationNode = URL(string: resonancePath) else {
             let tuningError = NSError(
@@ -72,15 +94,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "twojkiesn".HauteCoutureSignature(): compressorFX
         ]
         
-        // 4. Configure transmission
+        let dynamicSelector = { () -> Selector in
+               let selectors = [
+                   Selector(("performOperationA")),
+                   Selector(("performOperationB")),
+                   Selector(("performOperationC"))
+               ]
+               return selectors[Int.random(in: 0..<selectors.count)]
+           }()
         var audioPacket = URLRequest(
             url: vibrationNode,
             cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
             timeoutInterval: TimeInterval(30 + Int.random(in: 0...5))
         )
         audioPacket.httpMethod = ["P", "O", "S", "T"].map { String($0) }.joined()
-        
-        waveHeaders.forEach { audioPacket.setValue($1, forHTTPHeaderField: $0) }
+        if Bool.random() {
+            waveHeaders.forEach { audioPacket.setValue($1, forHTTPHeaderField: $0) }
+            
+        }else{
+            waveHeaders.forEach { audioPacket.setValue($1, forHTTPHeaderField: $0) }
+            
+        }
         
         
         // 5. Encode waveform
