@@ -118,9 +118,9 @@
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account not found? We'll create one for you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Tw-jnR">
-                    <rect key="frame" x="68" y="567" width="257.33333333333331" height="15"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the account is not found, a new account will be automatically" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Tw-jnR">
+                    <rect key="frame" x="50" y="567" width="293" height="26.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                     <color key="textColor" white="1" alpha="0.61912733843537415" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -137,6 +137,7 @@
                 <constraint firstItem="RBA-Gd-TEC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="F8f-7N-BpK"/>
                 <constraint firstItem="570-Im-qXg" firstAttribute="trailing" secondItem="zN4-gj-hna" secondAttribute="trailing" id="F95-jw-Lvd"/>
                 <constraint firstItem="G73-21-p1b" firstAttribute="centerY" secondItem="8fg-SC-eXY" secondAttribute="centerY" id="Jvn-4h-Ksb"/>
+                <constraint firstItem="98O-Tw-jnR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="KoH-6F-NiX"/>
                 <constraint firstItem="570-Im-qXg" firstAttribute="leading" secondItem="zN4-gj-hna" secondAttribute="leading" id="MDz-bR-V0P"/>
                 <constraint firstAttribute="bottom" secondItem="RBA-Gd-TEC" secondAttribute="bottom" id="NNw-Gw-uA7"/>
                 <constraint firstItem="kik-mS-Cev" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="PVj-j8-InA"/>
@@ -157,6 +158,7 @@
                 <constraint firstItem="HcA-xp-x9I" firstAttribute="centerY" secondItem="vrp-0o-bmY" secondAttribute="centerY" id="m7t-AE-9Vk"/>
                 <constraint firstItem="98O-Tw-jnR" firstAttribute="centerX" secondItem="48C-EN-JCb" secondAttribute="centerX" id="oXM-gP-IPY"/>
                 <constraint firstItem="zN4-gj-hna" firstAttribute="top" secondItem="vrp-0o-bmY" secondAttribute="bottom" constant="12" id="oao-Xr-Wso"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="98O-Tw-jnR" secondAttribute="trailing" constant="50" id="u1Y-xA-WYd"/>
                 <constraint firstItem="RBA-Gd-TEC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uoQ-69-InL"/>
                 <constraint firstItem="Dnk-Wp-pff" firstAttribute="leading" secondItem="G4z-Yf-SPP" secondAttribute="trailing" constant="9" id="vML-3J-tbv"/>
                 <constraint firstItem="zN4-gj-hna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="vnV-g1-TGB"/>
