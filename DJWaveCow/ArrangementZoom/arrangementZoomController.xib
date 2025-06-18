@@ -118,6 +118,12 @@
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account not found? We'll create one for you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Tw-jnR">
+                    <rect key="frame" x="68" y="567" width="257.33333333333331" height="15"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="0.61912733843537415" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,12 +148,14 @@
                 <constraint firstItem="UHJ-NZ-q2D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fZs-Lg-Ori"/>
                 <constraint firstItem="HcA-xp-x9I" firstAttribute="leading" secondItem="vrp-0o-bmY" secondAttribute="trailing" constant="11" id="gxU-eB-UiW"/>
                 <constraint firstItem="vrp-0o-bmY" firstAttribute="top" secondItem="kik-mS-Cev" secondAttribute="bottom" constant="41" id="haJ-H6-e5h"/>
+                <constraint firstItem="98O-Tw-jnR" firstAttribute="top" secondItem="48C-EN-JCb" secondAttribute="bottom" constant="12" id="hgO-Yh-6WW"/>
                 <constraint firstItem="G73-21-p1b" firstAttribute="leading" secondItem="8fg-SC-eXY" secondAttribute="trailing" constant="11" id="hk1-ue-lP5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zN4-gj-hna" secondAttribute="trailing" constant="16" id="i6H-zl-2uj"/>
                 <constraint firstItem="570-Im-qXg" firstAttribute="top" secondItem="8fg-SC-eXY" secondAttribute="bottom" constant="12" id="ihs-YL-WVw"/>
                 <constraint firstItem="RBA-Gd-TEC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jjB-PA-FW7"/>
                 <constraint firstItem="8fg-SC-eXY" firstAttribute="leading" secondItem="vrp-0o-bmY" secondAttribute="leading" id="lkn-6q-BGB"/>
                 <constraint firstItem="HcA-xp-x9I" firstAttribute="centerY" secondItem="vrp-0o-bmY" secondAttribute="centerY" id="m7t-AE-9Vk"/>
+                <constraint firstItem="98O-Tw-jnR" firstAttribute="centerX" secondItem="48C-EN-JCb" secondAttribute="centerX" id="oXM-gP-IPY"/>
                 <constraint firstItem="zN4-gj-hna" firstAttribute="top" secondItem="vrp-0o-bmY" secondAttribute="bottom" constant="12" id="oao-Xr-Wso"/>
                 <constraint firstItem="RBA-Gd-TEC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uoQ-69-InL"/>
                 <constraint firstItem="Dnk-Wp-pff" firstAttribute="leading" secondItem="G4z-Yf-SPP" secondAttribute="trailing" constant="9" id="vML-3J-tbv"/>
