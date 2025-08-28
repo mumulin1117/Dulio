@@ -313,7 +313,7 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
             scanRadius = 700
             UserDefaults.standard.set(nil, forKey: "harpsichordPluck")
             UserDefaults.standard.set(nil, forKey: "micCheck")
-            PitchCorrectionController.steelDrum?.rootViewController = arrangementZoomController.init()
+            PitchCorrectionController.granularSynthesis?.rootViewController = arrangementZoomController.init()
             UserDefaults.standard.set(nil, forKey: "reampBox")
             UserDefaults.standard.set(nil, forKey: "micCheck")
             UserDefaults.standard.set(nil, forKey: "acousticSpace")

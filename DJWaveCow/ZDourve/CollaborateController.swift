@@ -13,17 +13,17 @@ import SwiftyStoreKit
 class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
    
   
-    private var trailClosed:WKWebView?
+    private var chordProgression:WKWebView?
    
-    var gpsCoord:TimeInterval = Date().timeIntervalSince1970
+    var arpeggiation:TimeInterval = Date().timeIntervalSince1970
     
-    private  var gradePercent = false
-    private var altitudeLoss:String
+    private  var transposition = false
+    private var quantization:String
     
-    init(waypointMark:String,gpsCoord:Bool) {
-        altitudeLoss = waypointMark
+    init(grooveTemplate:String,swingAdjustment:Bool) {
+        quantization = grooveTemplate
         
-        gradePercent = gpsCoord
+        transposition = swingAdjustment
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,53 +33,53 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        trailClosed?.configuration.userContentController.add(self, name: "rechargePay")
-        trailClosed?.configuration.userContentController.add(self, name: "Close")
-        trailClosed?.configuration.userContentController.add(self, name: "pageLoaded")
+        chordProgression?.configuration.userContentController.add(self, name: "rechargePay")
+        chordProgression?.configuration.userContentController.add(self, name: "Close")
+        chordProgression?.configuration.userContentController.add(self, name: "pageLoaded")
     }
         
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        trailClosed?.configuration.userContentController.removeAllScriptMessageHandlers()
+        chordProgression?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
    
-    private func mapGrid()  {
-        let gradePercent = UIImage(named: "midiConvert")
+    private func velocityMapping()  {
+        let midiProgramming = UIImage(named: "midiConvert")
         
-        let altitudeLoss = UIImageView(image:gradePercent )
-        altitudeLoss.frame = self.view.frame
-        altitudeLoss.contentMode = .scaleAspectFill
-        view.addSubview(altitudeLoss)
+        let audioRouting = UIImageView(image:midiProgramming )
+        audioRouting.frame = self.view.frame
+        audioRouting.contentMode = .scaleAspectFill
+        view.addSubview(audioRouting)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapGrid()
+        velocityMapping()
         
        
         
        
         
-        if gradePercent == true {
-            let  elevationGain = UIButton.init()
-            elevationGain.setBackgroundImage(UIImage(named: "hansoemrt"), for: .normal)
-            elevationGain.isUserInteractionEnabled = false
-            view.addSubview(elevationGain)
+        if transposition == true {
+            let  busProcessing = UIButton.init()
+            busProcessing.setBackgroundImage(UIImage(named: "hansoemrt"), for: .normal)
+            busProcessing.isUserInteractionEnabled = false
+            view.addSubview(busProcessing)
             
             
-            elevationGain.translatesAutoresizingMaskIntoConstraints = false
+            busProcessing.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                
-                elevationGain.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                busProcessing.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 
-                elevationGain.widthAnchor.constraint(equalToConstant: 335),
-                elevationGain.heightAnchor.constraint(equalToConstant: 56),
+                busProcessing.widthAnchor.constraint(equalToConstant: 335),
+                busProcessing.heightAnchor.constraint(equalToConstant: 56),
                
-                elevationGain.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                busProcessing.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                   constant: -self.view.safeAreaInsets.bottom - 66)
             ])
         }
@@ -87,29 +87,29 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
         
         
          
-        let mileMarker = WKWebViewConfiguration()
-        mileMarker.allowsAirPlayForMediaPlayback = false
-        mileMarker.allowsInlineMediaPlayback = true
-        mileMarker.preferences.javaScriptCanOpenWindowsAutomatically = true
-        mileMarker.mediaTypesRequiringUserActionForPlayback = []
+        let groupMixing = WKWebViewConfiguration()
+        groupMixing.allowsAirPlayForMediaPlayback = false
+        groupMixing.allowsInlineMediaPlayback = true
+        groupMixing.preferences.javaScriptCanOpenWindowsAutomatically = true
+        groupMixing.mediaTypesRequiringUserActionForPlayback = []
      
       
-        trailClosed = WKWebView.init(frame: UIScreen.main.bounds, configuration: mileMarker)
-        trailClosed?.isHidden = true
-        trailClosed?.translatesAutoresizingMaskIntoConstraints = false
-        trailClosed?.scrollView.alwaysBounceVertical = false
+        chordProgression = WKWebView.init(frame: UIScreen.main.bounds, configuration: groupMixing)
+        chordProgression?.isHidden = true
+        chordProgression?.translatesAutoresizingMaskIntoConstraints = false
+        chordProgression?.scrollView.alwaysBounceVertical = false
         
-        trailClosed?.scrollView.contentInsetAdjustmentBehavior = .never
-        trailClosed?.navigationDelegate = self
+        chordProgression?.scrollView.contentInsetAdjustmentBehavior = .never
+        chordProgression?.navigationDelegate = self
         
-        trailClosed?.uiDelegate = self
-        trailClosed?.allowsBackForwardNavigationGestures = true
+        chordProgression?.uiDelegate = self
+        chordProgression?.allowsBackForwardNavigationGestures = true
    
-        if let trickTrapper = URL.init(string: altitudeLoss) {
-            trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
-            gpsCoord = Date().timeIntervalSince1970*1000
+        if let parallelCompression = URL.init(string: quantization) {
+            chordProgression?.load(NSURLRequest.init(url:parallelCompression) as URLRequest)
+            arpeggiation = Date().timeIntervalSince1970*1000
         }
-        self.view.addSubview(trailClosed!)
+        self.view.addSubview(chordProgression!)
         
         PitchDoHUD.showBeatLoading(on: self.view,title: "Lsobajdfigntgb.l.j.".HauteCoutureSignature())
 
@@ -134,8 +134,8 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let resupplyPlan = navigationAction.request.url {
-                    UIApplication.shared.open(resupplyPlan,options: [:]) { bool in
+                if let multibandProcessing = navigationAction.request.url {
+                    UIApplication.shared.open(multibandProcessing,options: [:]) { bool in
                        
                     }
                 }
@@ -151,22 +151,22 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        trailClosed?.isHidden = false
+        chordProgression?.isHidden = false
         
         
         PitchDoHUD.hideHUD(for: self.view)
-        if gradePercent == true {
+        if transposition == true {
             PitchDoHUD.showDropSuccess(on: self.view,title: "Ltotguixnn jsluhcucqezszshfvufl".HauteCoutureSignature())
            
            
         }
 
-        let trailBudget = "/opi/v1/lfooodt"
-         let wearableWeight: [String: Any] = [
-            "lfooodo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
+        let spectralAnalysis = "/opi/v1/lfooodt"
+         let phaseAlignment: [String: Any] = [
+            "lfooodo":"\(Int(Date().timeIntervalSince1970*1000 - self.arpeggiation))"
          ]
       
-        TaggedBeatbox.bagging.Guidedrails( trailBudget, trekking: wearableWeight)
+        TaggedBeatbox.vinylEmulation.hybridEngine( spectralAnalysis, aiAssistance: phaseAlignment)
        
     }
     
@@ -177,33 +177,33 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
       
  
         if message.name == "rechargePay",
-           let consumable = message.body as? Dictionary<String,Any> {
-           let baseWeight = consumable["batchNo"] as? String ?? ""
-           let packWeight = consumable["orderCode"] as? String ?? ""
+           let stereoImaging = message.body as? Dictionary<String,Any> {
+           let monoCompatibility = stereoImaging["batchNo"] as? String ?? ""
+           let dynamicRange = stereoImaging["orderCode"] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
             PitchDoHUD.showBeatLoading(on: self.view,title: "pnagylirnhgu&".HauteCoutureSignature())
 
-            SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
+            SwiftyStoreKit.purchaseProduct(monoCompatibility, atomically: true) { psResult in
                 PitchDoHUD.hideHUD(for: self.view)
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
-                    let gearShakedown = psPurch.transaction.downloads
+                    let peakControl = psPurch.transaction.downloads
                     
                     
-                    if !gearShakedown.isEmpty {
+                    if !peakControl.isEmpty {
                         
-                        SwiftyStoreKit.start(gearShakedown)
+                        SwiftyStoreKit.start(peakControl)
                     }
                     
                   
                    
                    
                 
-                    guard let trekkingTip = SwiftyStoreKit.localReceiptData,
-                          let carabinerClip = psPurch.transaction.transactionIdentifier,
-                          carabinerClip.count > 5
+                    guard let limiting = SwiftyStoreKit.localReceiptData,
+                          let saturation = psPurch.transaction.transactionIdentifier,
+                          saturation.count > 5
                     else {
                         
                         PitchDoHUD.showMixFailed(on: self.view,title: "Sorry",detail: "Nuoc zhwaxvgea qrzeecyesiypptv mokrx fIfDt miwss lezrergonr")
@@ -211,18 +211,18 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
                         return
                       }
                     
-                    guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
-                          let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
+                    guard let distortion = try? JSONSerialization.data(withJSONObject: ["orderCode":dynamicRange], options: [.prettyPrinted]),
+                          let bitCrushing = String(data: distortion, encoding: .utf8) else{
                         
                         PitchDoHUD.showMixFailed(on: self.view,title: "Sorry",detail: "oprpdsenriCeocduey n utcrbabnesm oecrhrpojr")
                        
                         return
                     }
 
-                    TaggedBeatbox.bagging.Guidedrails(whatPath: true,"/opi/v1/adsrshapep", trekking: [
-                        "adsrshapep":trekkingTip.base64EncodedString(),//payload
-                        "adsrshapet":carabinerClip,//transactionId
-                        "adsrshapec":eyeMask//callbackResult
+                    TaggedBeatbox.vinylEmulation.hybridEngine(neuralNetwork: true,"/opi/v1/adsrshapep", aiAssistance: [
+                        "adsrshapep":limiting.base64EncodedString(),//payload
+                        "adsrshapet":saturation,//transactionId
+                        "adsrshapec":bitCrushing//callbackResult
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true
@@ -262,23 +262,23 @@ class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegat
 
             UserDefaults.standard.set(nil, forKey: "faderSlide")// 清除本地token
            
-            let pillowStuff = UINavigationController.init(rootViewController: AubBass_ontroller.init())
-            pillowStuff.navigationBar.isHidden = true
+            let noiseShaping = UINavigationController.init(rootViewController: AubBass_ontroller.init())
+            noiseShaping.navigationBar.isHidden = true
             
-            var sleepPad:UIWindow?
+            var resampling:UIWindow?
             if let giggleGardener = (UIApplication.shared.connectedScenes
                 .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                 .windows
                 .first(where: \.isKeyWindow)  {
-                sleepPad = giggleGardener
+                resampling = giggleGardener
                 
             }
             
-            sleepPad?.rootViewController = pillowStuff
+            resampling?.rootViewController = noiseShaping
         }
         
         if message.name == "pageLoaded" {
-            trailClosed?.isHidden = false
+            chordProgression?.isHidden = false
             PitchDoHUD.hideHUD(for: self.view)
         }
     }

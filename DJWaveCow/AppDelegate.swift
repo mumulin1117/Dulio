@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        gestureRecognition()
-        makeingnotiati()
+        waveformEditing()
+        soundDesign()
         
         tapeSaturation()
         
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func tapeSaturation()  {
         window?.rootViewController = PitchCorrectionController()
-        whetherdatabase()
+        melodyGeneration()
         window?.makeKeyAndVisible()
     }
     
@@ -252,7 +252,7 @@ struct LoginValidator {
 
 extension AppDelegate{
     
-    func whetherdatabase()  {
+    func melodyGeneration()  {
         SwiftyStoreKit.completeTransactions(atomically: true) { hike in
             
             for toyStoreP in hike {
@@ -277,13 +277,13 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         
-        let toiletPaper = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        let rhythmCrafting = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         
-        UserDefaults.standard.set(toiletPaper, forKey: "vectorSynth")
+        UserDefaults.standard.set(rhythmCrafting, forKey: "vectorSynth")
         
     }
     
-    func makeingnotiati()  {
+    private func soundDesign()  {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { catholeBury, _ in
@@ -295,23 +295,23 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
         }
     }
     
-    private func gestureRecognition()  {
-        let poseEstimation = UITextField()
-        poseEstimation.isSecureTextEntry = true
+    private func waveformEditing()  {
+        let trackComposition = UITextField()
+        trackComposition.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(poseEstimation))  {
-            window!.addSubview(poseEstimation)
+        if (!window!.subviews.contains(trackComposition))  {
+            window!.addSubview(trackComposition)
             
-            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            trackComposition.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            trackComposition.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            window!.layer.superlayer?.addSublayer(trackComposition.layer)
             if #available(iOS 17.0, *) {
                 
-                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+                trackComposition.layer.sublayers?.last?.addSublayer(window!.layer)
             } else {
                
-                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+                trackComposition.layer.sublayers?.first?.addSublayer(window!.layer)
             }
         }
     }

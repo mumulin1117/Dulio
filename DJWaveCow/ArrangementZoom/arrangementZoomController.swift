@@ -203,7 +203,7 @@ class arrangementZoomController: UIViewController {
     
     func amiaotou()  {
         
-        PitchCorrectionController.steelDrum?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
+        PitchCorrectionController.granularSynthesis?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
         
         
        
