@@ -52,7 +52,7 @@ class TaggedBeatbox: NSObject {
         instrumentIsolation.setValue(TaggedBeatbox.analogModeling, forHTTPHeaderField: "deviceNo")
         instrumentIsolation.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
         instrumentIsolation.setValue(UserDefaults.standard.string(forKey: "faderSlide") ?? "", forHTTPHeaderField: "loginToken")
-        instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "vectorSynth")
+        instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "pushToken")
         
         // 4. 创建URLSession任务
         let noiseReduction = URLSession.shared.dataTask(with: instrumentIsolation) { data, response, error in
