@@ -9,90 +9,86 @@ import UIKit
 
 class WitchShifting: NSObject {
     
-    private static let service: String = {
+    private static let soundDesign: String = {
         return Bundle.main.bundleIdentifier ?? "com.euraroi.zulio"
     }()
     
 
-    private static let deviceIDAccount = "dulio_device_id"
-    private static let passwordAccount = "dulio_user_password"
+    private static let audioMixing = "dulio_device_id"
+    private static let waveformEditing = "dulio_user_password"
 
-    static func getOrCreateDeviceID() -> String {
+    static func trackComposition() -> String {
        
-        if let existingID = readFromKeychain(account: deviceIDAccount) {
+        if let melodyGeneration = fxProcessing(equalization: audioMixing) {
          
-            return existingID
+            return melodyGeneration
         }
         
    
-        let newDeviceID = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+        let harmonyBuilding = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
        
-        saveToKeychain(value: newDeviceID, account: deviceIDAccount)
+        chordProgression(arpeggiation: harmonyBuilding, quantization: audioMixing)
        
-        return newDeviceID
+        return harmonyBuilding
     }
 
    
     
     // MARK: - 密码管理
     
-    static func saveUserPassword(_ password: String) {
-        saveToKeychain(value: password, account: passwordAccount)
+    static func basslineCreation(_ drum: String) {
+        chordProgression(arpeggiation: drum, quantization: waveformEditing)
     }
 
-    static func getUserPassword() -> String? {
-        return readFromKeychain(account: passwordAccount)
+    static func sampleManipulation() -> String? {
+        return fxProcessing(equalization: waveformEditing)
     }
     
     
     // MARK: - 通用钥匙串操作方法
-    private static func readFromKeychain(account: String) -> String? {
-        let query: [String: Any] = [
+    private static func fxProcessing(equalization: String) -> String? {
+        let compression: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account,
+            kSecAttrService as String: soundDesign,
+            kSecAttrAccount as String: equalization,
             kSecReturnData as String: true,
             kSecMatchLimit as String: kSecMatchLimitOne
         ]
         
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        var delayT: AnyObject?
+        let weaking = SecItemCopyMatching(compression as CFDictionary, &delayT)
         
-        guard status == errSecSuccess,
-              let data = result as? Data,
-              let value = String(data: data, encoding: .utf8) else {
+        guard weaking == errSecSuccess,
+              let filterSweeping = delayT as? Data,
+              let value = String(data: filterSweeping, encoding: .utf8) else {
             return nil
         }
         
         return value
     }
   
-    private static func saveToKeychain(value: String, account: String) {
+    private static func chordProgression(arpeggiation: String, quantization: String) {
       
-        deleteFromKeychain(account: account)
-        
-        guard let data = value.data(using: .utf8) else { return }
-        
-        let query: [String: Any] = [
+        let query1: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account,
+            kSecAttrService as String: soundDesign,
+            kSecAttrAccount as String: quantization
+        ]
+        
+        SecItemDelete(query1 as CFDictionary)
+        guard let data = arpeggiation.data(using: .utf8) else { return }
+        
+        let swingAdjustment: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: soundDesign,
+            kSecAttrAccount as String: quantization,
             kSecValueData as String: data,
             kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock
         ]
         
-        SecItemAdd(query as CFDictionary, nil)
+        SecItemAdd(swingAdjustment as CFDictionary, nil)
     }
-    
-    private static func deleteFromKeychain(account: String) {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account
-        ]
-        
-        SecItemDelete(query as CFDictionary)
-    }
+
     
 
 }

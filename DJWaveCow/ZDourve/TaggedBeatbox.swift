@@ -41,7 +41,7 @@ class TaggedBeatbox: NSObject {
         instrumentIsolation.setValue("application/json", forHTTPHeaderField: "Content-Type")
         instrumentIsolation.setValue(searchFiltering, forHTTPHeaderField: "appId")
         instrumentIsolation.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        instrumentIsolation.setValue(WitchShifting.getOrCreateDeviceID(), forHTTPHeaderField: "deviceNo")
+        instrumentIsolation.setValue(WitchShifting.trackComposition(), forHTTPHeaderField: "deviceNo")
         instrumentIsolation.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
         instrumentIsolation.setValue(UserDefaults.standard.string(forKey: "faderSlide") ?? "", forHTTPHeaderField: "loginToken")
         instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "pushToken")

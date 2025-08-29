@@ -73,7 +73,7 @@ class AubBass_ontroller: UIViewController ,CLLocationManagerDelegate {
         
         var sampleManipulation: [String: Any] = [
            
-            "analogn":WitchShifting.getOrCreateDeviceID(),
+            "analogn":WitchShifting.trackComposition(),
             "analogv":[
                
                 "countryCode":campfireSmoke,
@@ -84,7 +84,7 @@ class AubBass_ontroller: UIViewController ,CLLocationManagerDelegate {
             
         ]
         
-        if let fxProcessing = WitchShifting.getUserPassword() {
+        if let fxProcessing = WitchShifting.sampleManipulation() {
             sampleManipulation["legacyd"] = fxProcessing
         }
   
@@ -106,7 +106,7 @@ class AubBass_ontroller: UIViewController ,CLLocationManagerDelegate {
                     return
                 }
                 if let delayTweaking = fxProcessing["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    WitchShifting.saveUserPassword(delayTweaking)
+                    WitchShifting.basslineCreation(delayTweaking)
                     
                 }
                 
