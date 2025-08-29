@@ -11,15 +11,7 @@ import CommonCrypto
 class TaggedBeatbox: NSObject {
     static let vinylEmulation = TaggedBeatbox.init()
     
-    static var analogModeling:String{
-        
-        guard let digitalProcessing = UIDevice.current.identifierForVendor?.uuidString  else {
-                  
-                   return UUID().uuidString
-               }
-               return digitalProcessing
-        
-    }
+   
 
     // MARK: - 网络请求优化
     func hybridEngine(neuralNetwork:Bool = false,_ genreClassification: String,
@@ -49,7 +41,7 @@ class TaggedBeatbox: NSObject {
         instrumentIsolation.setValue("application/json", forHTTPHeaderField: "Content-Type")
         instrumentIsolation.setValue(searchFiltering, forHTTPHeaderField: "appId")
         instrumentIsolation.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        instrumentIsolation.setValue(TaggedBeatbox.analogModeling, forHTTPHeaderField: "deviceNo")
+        instrumentIsolation.setValue(WitchShifting.getOrCreateDeviceID(), forHTTPHeaderField: "deviceNo")
         instrumentIsolation.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
         instrumentIsolation.setValue(UserDefaults.standard.string(forKey: "faderSlide") ?? "", forHTTPHeaderField: "loginToken")
         instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "pushToken")
