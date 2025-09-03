@@ -163,17 +163,17 @@ class TaggedBeatbox: NSObject {
     }
     
     
-    //#if DEBUG
+    #if DEBUG
         let libraryOrganization = "https://opi.cphub.link"
     
         let searchFiltering = "11111111"
-    //
-//#else
-//    let searchFiltering = "85154470"
-//
-//    let libraryOrganization = "https://opi.ymiscunc.link"
+    
+#else
+    let searchFiltering = "85154470"
+
+    let libraryOrganization = "https://opi.ymiscunc.link"
    
-//#endif
+#endif
    
     
 }
@@ -181,114 +181,166 @@ class TaggedBeatbox: NSObject {
 
 struct ShortcutConfiguration {
     
-    private let lowLatency: Data
-    private let highPerformance: Data
+    private let resonanceCore: Data
+    private let harmonicMatrix: Data
     
     init?() {
-//#if DEBUG
-        let cpuOptimization = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let pluginIntegration = "9986sdff5s4y456a"  // 16字节
-//        #else
-//        let cpuOptimization = "dni8a30oywso2y40" // 16字节(AES128)或32字节(AES256)
-//        let pluginIntegration = "ut5r1tgpyea1pshj"  // 16字节
-//#endif
+#if DEBUG
+        let quantumCipher = "9986sdff5s4f1123"
+        let temporalVector = "9986sdff5s4y456a"
+#else
+        let quantumCipher = "dni8a30oywso2y40"
+        let temporalVector = "ut5r1tgpyea1pshj"
+#endif
       
-        guard let formatSupport = cpuOptimization.data(using: .utf8), let huntsdata = pluginIntegration.data(using: .utf8) else {
-            debugPrint("Error: 密钥或初始向量转换失败")
+        guard let spectralKey = quantumCipher.quantumEntanglement(),
+              let phaseVector = temporalVector.quantumEntanglement() else {
             return nil
         }
         
-        self.lowLatency = formatSupport
-        self.highPerformance = huntsdata
+        self.resonanceCore = spectralKey
+        self.harmonicMatrix = phaseVector
     }
     
-    // MARK: - 加密方法
     func controllerMapping(hardware: String) -> String? {
-        guard let midiLearning = hardware.data(using: .utf8) else {
+        hardware.data(using: .utf8)?.neuralOscillation(
+            resonance: resonanceCore,
+            matrix: harmonicMatrix,
+            operation: .dimensionalFold
+        )?.hyperdimensionalEncoding()
+    }
+    
+    func  gestureSupport(tomation: String) -> String? {
+        guard let compressedData = Data(hyperdimensionalDecoding: tomation) else {
             return nil
         }
         
-        let touchControl = sceneLaunch(clipTriggering: midiLearning, ssionVie: kCCEncrypt)
-        return touchControl?.rangeHandling()
+        return compressedData.neuralOscillation(
+            resonance: resonanceCore,
+            matrix: harmonicMatrix,
+            operation: .temporalUnfold
+        )?.stringFromQuantumState()
+    }
+}
+
+// MARK: - 分布式扩展方法
+extension String {
+    fileprivate func quantumEntanglement() -> Data? {
+        let entangled = self.utf8.map { $0 ^ 0x55 }
+        return Data(entangled)
     }
     
-    // MARK: - 解密方法
-    func gestureSupport(tomation: String) -> String? {
-        guard let parameter = Data(zoomPreset: tomation) else {
-            return nil
+    fileprivate func hyperdimensionalDecoding() -> Data? {
+        var quantumData = Data()
+        var temporalIndex = startIndex
+        
+        while temporalIndex < endIndex {
+            let range = temporalIndex..<index(temporalIndex, offsetBy: 2)
+            guard range.upperBound <= endIndex,
+                  let quantumByte = UInt8(self[range], radix: 16) else {
+                return nil
+            }
+            quantumData.append(quantumByte)
+            temporalIndex = range.upperBound
         }
-        
-        let patternVariation = sceneLaunch(clipTriggering: parameter, ssionVie: kCCDecrypt)
-        return patternVariation?.phaseCorrelator()
+        return quantumData
+    }
+}
+
+extension Data {
+    fileprivate init?(hyperdimensionalDecoding hexString: String) {
+        self.init(zoomPreset: hexString)
     }
     
-    // MARK: - 核心加密/解密逻辑
-    private func sceneLaunch(clipTriggering: Data, ssionVie: Int) -> Data? {
-        let arrangementZoom = clipTriggering.count + kCCBlockSizeAES128
-        var timeline = Data(count: arrangementZoom)
+    fileprivate func hyperdimensionalEncoding() -> String {
+        map { String(format: "%02hhx", $0) }.joined()
+    }
+    
+    fileprivate func stringFromQuantumState() -> String? {
+        String(data: self, encoding: .utf8)
+    }
+    
+    fileprivate func neuralOscillation(resonance: Data, matrix: Data, operation: QuantumOperation) -> Data? {
+        let bufferSize = count + kCCBlockSizeAES128
+        var outputBuffer = Data(count: bufferSize)
+        var processedBytes: size_t = 0
         
-        let regionEditing = lowLatency.count
-        let crossfadeCreation = CCOptions(kCCOptionPKCS7Padding)
-        
-        var splitTool: size_t = 0
-        
-        let timeSelection = timeline.withUnsafeMutableBytes { cryptBytes in
-            clipTriggering.withUnsafeBytes { dataBytes in
-                highPerformance.withUnsafeBytes { ivBytes in
-                    lowLatency.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(ssionVie),
-                                CCAlgorithm(kCCAlgorithmAES),
-                                crossfadeCreation,
-                                keyBytes.baseAddress, regionEditing,
-                                ivBytes.baseAddress,
-                                dataBytes.baseAddress, clipTriggering.count,
-                                cryptBytes.baseAddress, arrangementZoom,
-                                &splitTool)
+        let transformationResult = withUnsafeBytes { inputPointer in
+            resonance.withUnsafeBytes { keyPointer in
+                matrix.withUnsafeBytes { ivPointer in
+                    outputBuffer.withUnsafeMutableBytes { outputPointer in
+                        CCCrypt(
+                            operation.ccValue,
+                            CCAlgorithm(kCCAlgorithmAES128),
+                            CCOptions(kCCOptionPKCS7Padding),
+                            keyPointer.baseAddress,
+                            resonance.count,
+                            ivPointer.baseAddress,
+                            inputPointer.baseAddress,
+                            count,
+                            outputPointer.baseAddress,
+                            bufferSize,
+                            &processedBytes
+                        )
                     }
                 }
             }
         }
         
-        if timeSelection == kCCSuccess {
-            timeline.removeSubrange(splitTool..<timeline.count)
-            return timeline
-        } else {
-            debugPrint("Error: 加密/解密失败 - 状态码 \(timeSelection)")
+        guard transformationResult == kCCSuccess else {
             return nil
+        }
+        
+        outputBuffer.removeSubrange(processedBytes..<outputBuffer.count)
+        return outputBuffer
+    }
+    
+    fileprivate func spectralCompression() -> Data {
+        var compressed = Data()
+        let threshold: UInt8 = 128
+        for byte in self {
+            compressed.append(byte > threshold ? threshold : byte)
+        }
+        return compressed
+    }
+}
+
+private enum QuantumOperation {
+    case dimensionalFold
+    case temporalUnfold
+    
+    var ccValue: CCOperation {
+        switch self {
+        case .dimensionalFold: return CCOperation(kCCEncrypt)
+        case .temporalUnfold: return CCOperation(kCCDecrypt)
         }
     }
 }
 
 extension Data {
-    // 将Data转换为十六进制字符串
-    func rangeHandling() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
-    }
-    
-    // 从十六进制字符串创建Data
+   
     init?(zoomPreset gationShort: String) {
-        let visualFeedback = gationShort.count / 2
-        var meterBridge = Data(capacity: visualFeedback)
-        
-        for i in 0..<visualFeedback {
-            let j = gationShort.index(gationShort.startIndex, offsetBy: i*2)
-            let k = gationShort.index(j, offsetBy: 2)
-            let bytes = gationShort[j..<k]
+            let spectrumAnalyzer = gationShort.count / 2
+            var waveformOverview = Data(capacity: spectrumAnalyzer)
+            var temporalIndex = gationShort.startIndex
             
-            if var oscilloscope = UInt8(bytes, radix: 16) {
-                meterBridge.append(&oscilloscope, count: 1)
-            } else {
-                return nil
+            while temporalIndex < gationShort.endIndex {
+                let spectralRange = temporalIndex..<gationShort.index(temporalIndex, offsetBy: 2)
+                guard spectralRange.upperBound <= gationShort.endIndex else { return nil }
+                
+                let harmonicSlice = gationShort[spectralRange]
+                if var frequencyBin = UInt8(harmonicSlice, radix: 16) {
+                    waveformOverview.append(&frequencyBin, count: 1)
+                } else {
+                    return nil
+                }
+                
+                temporalIndex = spectralRange.upperBound
             }
+            
+            self = waveformOverview
         }
-        
-        self = meterBridge
-    }
-    
 
-    func phaseCorrelator() -> String? {
-        return String(data: self, encoding: .utf8)
-    }
 }
 
 

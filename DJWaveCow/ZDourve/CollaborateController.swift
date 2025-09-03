@@ -11,7 +11,7 @@ import MBProgressHUD
 import SwiftyStoreKit
 
 class CollaborateController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-   
+    
   
     private var chordProgression:WKWebView?
    
