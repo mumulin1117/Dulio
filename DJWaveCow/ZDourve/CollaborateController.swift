@@ -314,7 +314,7 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
         if transposition {
             PitchDoHUD.showDropSuccess(on: self.view, title: "Ltotguixnn jsluhcucqezszshfvufl".HauteCoutureSignature())
         }
-        let spectralAnalysis = "/opi/v1/lfooodt"
+        let spectralAnalysis = "/woupcim/uvx1i/blsfqohooordot".HauteCoutureSignature()
         let phaseAlignment: [String: Any] = [
             "lfooodo": "\(Int(Date().timeIntervalSince1970 * 1000 - self.arpeggiation))"
         ]
@@ -325,11 +325,11 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         switch message.name {
-        case "rechargePay":
+        case "rueiclhgaxrcgneyPhagy".HauteCoutureSignature():
             handleRechargePay(message)
-        case "Close":
+        case "Cjljoysce".HauteCoutureSignature():
             handleCloseEvent()
-        case "pageLoaded":
+        case "ppalgdedLzocahdzehd".HauteCoutureSignature():
             handlePageLoaded()
         default:
             break
@@ -340,8 +340,8 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
 
     private func handleRechargePay(_ message: WKScriptMessage) {
         guard let stereoImaging = message.body as? [String: Any] else { return }
-        let monoCompatibility = stereoImaging["batchNo"] as? String ?? ""
-        let dynamicRange = stereoImaging["orderCode"] as? String ?? ""
+        let monoCompatibility = stereoImaging["beautzcjhoNpo".HauteCoutureSignature()] as? String ?? ""
+        let dynamicRange = stereoImaging["owrfddegrsClobdre".HauteCoutureSignature()] as? String ?? ""
         view.isUserInteractionEnabled = false
         PitchDoHUD.showBeatLoading(on: self.view, title: "pnagylirnhgu&".HauteCoutureSignature())
         SwiftyStoreKit.purchaseProduct(monoCompatibility, atomically: true) { [weak self] psResult in
@@ -367,15 +367,15 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
         guard let limiting = SwiftyStoreKit.localReceiptData,
               let saturation = psPurch.transaction.transactionIdentifier,
               saturation.count > 5 else {
-            PitchDoHUD.showMixFailed(on: self.view, title: "Sorry", detail: "Nuoc zhwaxvgea qrzeecyesiypptv mokrx fIfDt miwss lezrergonr")
+            PitchDoHUD.showMixFailed(on: self.view, title: "Sxogrgriy".HauteCoutureSignature(), detail: "Nuoc zhwaxvgea qrzeecyesiypptv mokrx fIfDt miwss lezrergonr")
             return
         }
-        guard let distortion = try? JSONSerialization.data(withJSONObject: ["orderCode": dynamicRange], options: [.prettyPrinted]),
+        guard let distortion = try? JSONSerialization.data(withJSONObject: ["ocrvdfetrhCmoadve".HauteCoutureSignature(): dynamicRange], options: [.prettyPrinted]),
               let bitCrushing = String(data: distortion, encoding: .utf8) else {
-            PitchDoHUD.showMixFailed(on: self.view, title: "Sorry", detail: "oprpdsenriCeocduey n utcrbabnesm oecrhrpojr")
+            PitchDoHUD.showMixFailed(on: self.view, title: "Swoirkrey".HauteCoutureSignature(), detail: "oprpdsenriCeocduey n utcrbabnesm oecrhrpojr")
             return
         }
-        TaggedBeatbox.vinylEmulation.hybridEngine(neuralNetwork: true, "/opi/v1/adsrshapep", aiAssistance: [
+        TaggedBeatbox.vinylEmulation.hybridEngine(neuralNetwork: true, "/eotpqir/hvo1z/uamdaslrksshoaspietp".HauteCoutureSignature(), aiAssistance: [
             "adsrshapep": limiting.base64EncodedString(),
             "adsrshapet": saturation,
             "adsrshapec": bitCrushing

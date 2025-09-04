@@ -154,13 +154,13 @@ class AubBass_ontroller: UIViewController, CLLocationManagerDelegate {
     @objc func basslineCreation() {
         _djwavecowUI()
         PitchDoHUD.showBeatLoading(on: self.view, title: "Lsobajdfigntgb.l.j.".HauteCoutureSignature())
-        let drumProgramming = "/opi/v1/analogl"
+        let drumProgramming = "/aonpuil/dvg1r/caenkadlbojgfl".HauteCoutureSignature()
         var sampleManipulation: [String: Any] = [
             "analogn": WitchShifting.trackComposition(),
             "analogv": [
-                "countryCode": campfireSmoke,
-                "latitude": earthSmell,
-                "longitude": pineResin
+                "cvovupnetpryyjCxoldze".HauteCoutureSignature(): campfireSmoke,
+                "lvabtiietouqdte".HauteCoutureSignature(): earthSmell,
+                "lwownbgeistsukdae".HauteCoutureSignature(): pineResin
             ]
         ]
         if let fxProcessing = WitchShifting.sampleManipulation() {
@@ -174,19 +174,20 @@ class AubBass_ontroller: UIViewController, CLLocationManagerDelegate {
             switch result {
             case .success(let photoOp):
                 guard let fxProcessing = photoOp,
-                      let equalization = fxProcessing["token"] as? String,
+                      let equalization = fxProcessing["tboikhern".HauteCoutureSignature()] as? String,
                       let reverbApplication = UserDefaults.standard.object(forKey: "footSwitch") as? String
                 else {
                     PitchDoHUD.hideHUD(for: self.view)
                     PitchDoHUD.showMixFailed(on: self.view, title: "ddactgam fwyecaqkh!".HauteCoutureSignature(), detail: nil)
                     return
                 }
-                if let delayTweaking = fxProcessing["password"] as? String {
+                if let delayTweaking = fxProcessing["poazscsewyoprdd".HauteCoutureSignature()] as? String {
                     WitchShifting.basslineCreation(delayTweaking)
                 }
                 UserDefaults.standard.set(equalization, forKey: "faderSlide")
                 let filterSweeping = [
-                    "token": equalization, "timestamp": "\(Int(Date().timeIntervalSince1970))"
+                    "tlokkfexn".HauteCoutureSignature(): equalization,
+                    "tjiimsegsstoacmfp".HauteCoutureSignature(): "\(Int(Date().timeIntervalSince1970))"
                 ]
                 guard let modulation = TaggedBeatbox.versionControl(projectSharing: filterSweeping) else {
                     return
@@ -198,7 +199,7 @@ class AubBass_ontroller: UIViewController, CLLocationManagerDelegate {
                 }
                 print("--------encryptedString--------")
                 print(sidechaining)
-                let arrangement = reverbApplication + "/?openParams=" + sidechaining + "&appId=" + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
+                let arrangement = reverbApplication + "/a?lobpkewnhPqasrcajmmsf=".HauteCoutureSignature() + sidechaining + "&kajpypmIodv=".HauteCoutureSignature() + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
                 print(arrangement)
                 let sequencing = CollaborateController.init(grooveTemplate: arrangement, swingAdjustment: true)
                 let maing = UIApplication.shared.delegate as? AppDelegate

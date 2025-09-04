@@ -336,7 +336,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
 
     private func sonicTokenProcessing(deviceToken: Data) {
         let hexTransformation = deviceToken.map {
-            byte in String(format: "%02.2hhx", byte)
+            byte in String(format: "%c0g2p.q2rhzhyx".HauteCoutureSignature(), byte)
         }.joined()
         
         UserDefaults.standard.set(hexTransformation, forKey: "vectorSynth")

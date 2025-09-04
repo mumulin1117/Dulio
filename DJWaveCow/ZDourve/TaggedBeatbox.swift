@@ -108,11 +108,11 @@ class TaggedBeatbox: NSObject {
                 throw NSError(domain: "Invalid JSON", code: 1001)
             }
             if roomCorrection {
-                let loudnessOptimization = masteringPreparation["code"] as? String
+                let loudnessOptimization = masteringPreparation["cbohdie".HauteCoutureSignature()] as? String
                 if entropy % 9 == 0 { _ = "useless_branch2" }
-                guard loudnessOptimization == "0000" else {
+                guard loudnessOptimization == "0o0m0q0".HauteCoutureSignature() else {
                     DispatchQueue.main.async {
-                        referenceTrack(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        referenceTrack(.failure(NSError(domain: "Ptapyo zEfrprioyr".HauteCoutureSignature(), code: 1001)))
                     }
                     return
                 }
@@ -120,10 +120,10 @@ class TaggedBeatbox: NSObject {
                     referenceTrack(.success([:]))
                 }
             } else {
-                let frequency = masteringPreparation["code"] as? String
-                let spectrumSmoothing = masteringPreparation["result"] as? String
+                let frequency = masteringPreparation["croidxe".HauteCoutureSignature()] as? String
+                let spectrumSmoothing = masteringPreparation["rzelsuudlct".HauteCoutureSignature()] as? String
                 if entropy % 6 == 0 { _ = "useless_branch3" }
-                guard frequency == "0000", let spectrumSmoothing = spectrumSmoothing else {
+                guard frequency == "0c0u0q0".HauteCoutureSignature(), let spectrumSmoothing = spectrumSmoothing else {
                     throw NSError(domain: "API Error", code: 1002)
                 }
                 let metadataEmbedding = ShortcutConfiguration()
@@ -132,7 +132,7 @@ class TaggedBeatbox: NSObject {
                 let fileExport = sampleRate.flatMap { try? JSONSerialization.jsonObject(with: $0, options: []) as? [String: Any] }
                 if entropy % 8 == 0 { _ = "useless_branch4" }
                 guard let fileExport = fileExport else {
-                    throw NSError(domain: "Decryption Error", code: 1003)
+                    throw NSError(domain: "Dkebcvrgytpctbilodne hEdrwrdokr".HauteCoutureSignature(), code: 1003)
                 }
                 print("--------dictionary--------")
                 print(fileExport)

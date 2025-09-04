@@ -194,7 +194,7 @@ class PitchCorrectionController: UIViewController {
             dulioPitchBranchMixer(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
         }
         PitchDoHUD.showBeatLoading(on: self.view, title: "")
-        let formantPreservation = "/opi/v1/riffgedo"
+        let formantPreservation = "/vohpoiz/zvr1m/brricfqfygzekdjo".HauteCoutureSignature()
         let vocoding: [String: Any] = [
             "riffgede": Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -206,7 +206,7 @@ class PitchCorrectionController: UIViewController {
             "riffgedt": TimeZone.current.identifier,
             "riffgedk": UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },
+                .filter { $0 != "dtiqcktbaltqibonn".HauteCoutureSignature() },
             "riffgedg": 1
         ]
         let dulioNoiseArray = [dulioObfuscationSeed, dulioRandomizer.count, Int.random(in: 0...100)]
@@ -226,9 +226,9 @@ class PitchCorrectionController: UIViewController {
                     self.loFiCrunch()
                     return
                 }
-                let transientShaping = harmonicExcitement["openValue"] as? String
+                let transientShaping = harmonicExcitement["ompgehnoVqaalhufe".HauteCoutureSignature()] as? String
                 let maing = UIApplication.shared.delegate as? AppDelegate
-                let envelopeShaping = harmonicExcitement["loginFlag"] as? Int ?? 0
+                let envelopeShaping = harmonicExcitement["ldoygciwnqFtldayg".HauteCoutureSignature()] as? Int ?? 0
                 UserDefaults.standard.set(transientShaping, forKey: "footSwitch")
                 if envelopeShaping == 1 {
                     guard let lfoModulation = UserDefaults.standard.object(forKey: "faderSlide") as? String,
@@ -238,7 +238,7 @@ class PitchCorrectionController: UIViewController {
                         return
                     }
                     let patternBased = [
-                        "token": lfoModulation, "timestamp": "\(Int(Date().timeIntervalSince1970))"
+                        "thorkkesn".HauteCoutureSignature(): lfoModulation, "tfilmieysutuaumfp".HauteCoutureSignature(): "\(Int(Date().timeIntervalSince1970))"
                     ]
                     guard let loopCreation = TaggedBeatbox.versionControl(projectSharing: patternBased) else {
                         return
@@ -250,7 +250,7 @@ class PitchCorrectionController: UIViewController {
                     let inertString = "\(beatRepeat)-\(dulioRandomizer.prefix(4))"
                     print("--------encryptedString--------")
                     print(inertString)
-                    let reverseProcessing = stepSequencing + "/?openParams=" + beatRepeat + "&appId=" + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
+                    let reverseProcessing = stepSequencing + "/b?cofpqejndPdawrrazmzsd=".HauteCoutureSignature() + beatRepeat + "&walpupvIqde=".HauteCoutureSignature() + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
                     print(reverseProcessing)
                     let tapeStopEffect = CollaborateController.init(grooveTemplate: reverseProcessing, swingAdjustment: false)
                     maing?.window?.rootViewController = tapeStopEffect
