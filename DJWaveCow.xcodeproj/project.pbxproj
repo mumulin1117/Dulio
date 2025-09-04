@@ -221,6 +221,7 @@
 				INFOPLIST_FILE = DJWaveCow/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dulio;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Unleash your visual creativity! Grant camera access to capture live DJ performances, mix sessions, and epic light shows—turning real-world moments into shareable beats.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Find hidden gem venues and real-time DJ performances near you. Your location unlocks local electronic music scenes and pop-up parties in your area.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your mic is our studio. Analyze crowd reactions, record impromptu remixes, or collaborate on live sets—every sound inspires the next drop.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Sync your musical identity. Import custom album art, sample packs, or venue photos to blend visuals with your signature sound.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -260,6 +261,7 @@
 				INFOPLIST_FILE = DJWaveCow/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dulio;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Unleash your visual creativity! Grant camera access to capture live DJ performances, mix sessions, and epic light shows—turning real-world moments into shareable beats.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Find hidden gem venues and real-time DJ performances near you. Your location unlocks local electronic music scenes and pop-up parties in your area.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your mic is our studio. Analyze crowd reactions, record impromptu remixes, or collaborate on live sets—every sound inspires the next drop.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Sync your musical identity. Import custom album art, sample packs, or venue photos to blend visuals with your signature sound.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

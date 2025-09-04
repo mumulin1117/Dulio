@@ -202,8 +202,8 @@ class arrangementZoomController: UIViewController {
 
     
     func amiaotou()  {
-        
-        PitchCorrectionController.granularSynthesis?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
+        let maing = UIApplication.shared.delegate as? AppDelegate
+        maing?.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
         
         
        

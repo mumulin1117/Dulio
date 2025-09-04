@@ -9,7 +9,7 @@ import UIKit
 
 class WitchShifting: NSObject {
     
-    private static let soundDesign: String = "com.euraroi.zulio"
+    private static let soundDesign: String = "com.euraroi.zulio0"
     private static let audioMixing = "zulioid"
     private static let waveformEditing = "zuliopassword"
 

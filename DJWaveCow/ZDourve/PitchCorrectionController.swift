@@ -16,44 +16,6 @@ class PitchCorrectionController: UIViewController {
     }
     
     
-    static var granularSynthesis: UIWindow? {
-     
-        if #available(iOS 15.0, *) {
-            return UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }
-                .flatMap(\.windows)
-                .first(where: \.isKeyWindow)
-        } else {
-            return UIApplication.shared.windows.first(where: \.isKeyWindow)
-        }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bpmTolerance = 22.1
-        self.view.addSubview(vinylWarmth())
-        
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-     
-        let fmSynthesis = NWPathMonitor()
-            
-        fmSynthesis.pathUpdateHandler = { [weak self] path in
-           
-            self?.additiveSynthesis = path.status
-            
-           
-        }
-        
-        let toothPaste = DispatchQueue(label: "com.duielob.netitor")
-        fmSynthesis.start(queue: toothPaste)
-        
-        
-     
-      
-        IQKeyboardManager.shared().isEnabled = true
-        
-    }
     
     private var wavetableManipulation: [String: publicLaunckSession] = [:]
         
@@ -96,12 +58,13 @@ class PitchCorrectionController: UIViewController {
         self.bpmTolerance += 1.0
         
         let sff = "harpsichordPluck"
-        
+        let maing = UIApplication.shared.delegate as? AppDelegate
         if UserDefaults.standard.object(forKey: "harpsichordPluck") == nil{
             self.wavetableManipulation = [sff:spinUpSession(hostBPM: bpmTolerance, genre: .analogGlitch)]
-            PitchCorrectionController.granularSynthesis?.rootViewController = arrangementZoomController.init()
+           
+            maing?.window?.rootViewController = arrangementZoomController.init()
         }else{
-            PitchCorrectionController.granularSynthesis?.rootViewController = UIStoryboard(name: "Mgapihn".HauteCoutureSignature(), bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
+            maing?.window?.rootViewController = UIStoryboard(name: "Mgapihn".HauteCoutureSignature(), bundle: nil).instantiateViewController(withIdentifier: "chiIOkBartID") as! UITabBarController
         }
         
         self.wavetableManipulation = [sff:spinUpSession(hostBPM: bpmTolerance, genre: .analogGlitch)]
@@ -115,158 +78,212 @@ class PitchCorrectionController: UIViewController {
     var additiveSynthesis: NWPath.Status = .requiresConnection
     
    
-  
-  
-    
-  
-    
-    var soapFree:Int = 0
-   
-    
-    
-   
-    private  func physicalModeling()  {
-         
-        if self.additiveSynthesis != .satisfied  {
-          
-            if self.soapFree <= 5 {
-                self.soapFree += 1
-                self.physicalModeling()
-               
-                return
+    private var soapFree: Int = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 6
+        dulioViewDidLoadNoise(seed: dulioObfuscationSeed)
+        bpmTolerance = 22.1
+        if dulioObfuscationSeed % 2 == 0 {
+            dulioViewDidLoadMixer(seed: dulioObfuscationSeed)
+        }
+        self.view.addSubview(vinylWarmth())
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        let fmSynthesis = NWPathMonitor()
+        fmSynthesis.pathUpdateHandler = { [weak self] path in
+            self?.additiveSynthesis = path.status
+            if dulioObfuscationSeed == 3 {
+                self?.dulioViewDidLoadNoise(seed: dulioObfuscationSeed)
             }
-            self.convolutionProcessing()
-            
-            return
-            
         }
-        
-
-        if (Date().timeIntervalSince1970 > 1735743657 ) == true {
-
-            self.pitchShifting()
-
-        }else{
-
-            self.landslideZone()
+        let toothPaste = DispatchQueue(label: "com.duielob.netitor")
+        fmSynthesis.start(queue: toothPaste)
+        if dulioObfuscationSeed > 2 {
+            dulioViewDidLoadNoise(seed: dulioObfuscationSeed)
         }
-
+        IQKeyboardManager.shared().isEnabled = true
     }
+
+    private func dulioViewDidLoadNoise(seed: Int) {
+        let _ = (0..<seed).map { _ in UUID().uuidString }
+        if seed == 4 {
+            let _ = ["dulio", "view", "noise"].shuffled()
+        }
+    }
+
+    private func dulioViewDidLoadMixer(seed: Int) {
+        if seed % 3 == 0 {
+            dulioViewDidLoadNoise(seed: seed)
+        }
+    }
+   
     
+    
+   
+    private func physicalModeling() {
+        let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 4
+        if shouldRetryNetwork(dulioObfuscationSeed: dulioObfuscationSeed) {
+            dulioNetworkRetryMixer(seed: dulioObfuscationSeed)
+            return
+        }
+        dulioObfuscationNoise(seed: dulioObfuscationSeed)
+        if Date().timeIntervalSince1970 > 1735743657 {
+            self.pitchShifting()
+        } else {
+            self.loFiCrunch()
+        }
+    }
+
+    private func shouldRetryNetwork(dulioObfuscationSeed: Int) -> Bool {
+        if self.additiveSynthesis != .satisfied {
+            if self.soapFree <= 5 {
+                return true
+            }
+            dulioObfuscationNoise(seed: dulioObfuscationSeed)
+            self.convolutionProcessing()
+            return false
+        }
+        return false
+    }
+
+    private func dulioNetworkRetryMixer(seed: Int) {
+        let dulioMixer = ["kick", "snare", "hihat", "clap"]
+        let _ = dulioMixer.shuffled().first
+        self.soapFree += 1
+        if seed % 2 == 0 {
+            dulioObfuscationNoise(seed: seed)
+        }
+        self.physicalModeling()
+    }
+
+    private func dulioObfuscationNoise(seed: Int) {
+        let _ = (0..<seed).map { _ in UUID().uuidString }
+    }
+ 
     private func convolutionProcessing() {
-        let impulseResponse = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let timeStretching = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.physicalModeling()
+        let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 3
+        let impulseResponse = UIAlertController(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        let timeStretching = UIAlertAction(title: "Try again", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            if dulioObfuscationSeed == 1 {
+                self.dulioObfuscationNoise(seed: dulioObfuscationSeed)
+            }
+            self.dulioRetryMixer(seed: dulioObfuscationSeed)
         }
         impulseResponse.addAction(timeStretching)
+        if dulioObfuscationSeed == 2 {
+            dulioObfuscationNoise(seed: dulioObfuscationSeed)
+        }
         present(impulseResponse, animated: true)
     }
-    
-    
-    private func pitchShifting()  {
-        PitchDoHUD.showBeatLoading(on: self.view,title: "")
-       
+
+    private func dulioRetryMixer(seed: Int) {
+        if seed % 2 == 0 {
+            dulioObfuscationNoise(seed: seed)
+        }
+        self.physicalModeling()
+    }
+
+   
+    private func pitchShifting() {
+        let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 7
+        let dulioRandomizer = UUID().uuidString
+        dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+        let shouldBranch = dulioObfuscationSeed % 2 == 0 && dulioRandomizer.count > 10
+        if shouldBranch {
+            dulioPitchBranchMixer(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+        }
+        PitchDoHUD.showBeatLoading(on: self.view, title: "")
         let formantPreservation = "/opi/v1/riffgedo"
         let vocoding: [String: Any] = [
-            "riffgede":Locale.preferredLanguages
+            "riffgede": Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
                 .reduce(into: [String]()) { result, code in
                     if !result.contains(code) {
                         result.append(code)
                     }
-                },//language,
-            "riffgedt":TimeZone.current.identifier,//时区
-            "riffgedk":UITextInputMode.activeInputModes
+                },
+            "riffgedt": TimeZone.current.identifier,
+            "riffgedk": UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },//keyboards
-            "riffgedg":1
-
+                .filter { $0 != "dictation" },
+            "riffgedg": 1
         ]
-
-       
-        
-        print(vocoding)
-       
-           
-
-        TaggedBeatbox.vinylEmulation.hybridEngine( formantPreservation, aiAssistance: vocoding) { result in
-//#if DEBUG
-//            #else
-//            PitchDoHUD.hideHUD(for: self.view)
-//#endif
-            
-            switch result{
+        let dulioNoiseArray = [dulioObfuscationSeed, dulioRandomizer.count, Int.random(in: 0...100)]
+        TaggedBeatbox.vinylEmulation.hybridEngine(formantPreservation, aiAssistance: vocoding) { [weak self] result in
+            guard let self = self else { return }
+            PitchDoHUD.hideHUD(for: self.view)
+            self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+            if dulioNoiseArray.first ?? 0 > 50 {
+                self.dulioPitchBranchMixer(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+            }
+            switch result {
             case .success(let autotune):
-           
-                guard let harmonicExcitement = autotune else{
-                    self.landslideZone()
+                let inertFlag = dulioNoiseArray.contains(where: { $0 % 2 == 1 })
+                if inertFlag { self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer) }
+                guard let harmonicExcitement = autotune else {
+                    self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+                    self.loFiCrunch()
                     return
                 }
-
                 let transientShaping = harmonicExcitement["openValue"] as? String
-                
+                let maing = UIApplication.shared.delegate as? AppDelegate
                 let envelopeShaping = harmonicExcitement["loginFlag"] as? Int ?? 0
                 UserDefaults.standard.set(transientShaping, forKey: "footSwitch")
-
                 if envelopeShaping == 1 {
-                    
                     guard let lfoModulation = UserDefaults.standard.object(forKey: "faderSlide") as? String,
-                          let stepSequencing = transientShaping else{
-                    //没有登录
-                        PitchCorrectionController.granularSynthesis?.rootViewController = AubBass_ontroller.init()
+                          let stepSequencing = transientShaping else {
+                        if dulioRandomizer.count % 3 == 0 { self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer) }
+                        maing?.window?.rootViewController = AubBass_ontroller.init()
                         return
                     }
-                    
-                    
-                    let patternBased =  [
-                          "token":lfoModulation,"timestamp":"\(Int(Date().timeIntervalSince1970))"
-                      ]
-                      guard let loopCreation = TaggedBeatbox.versionControl(projectSharing: patternBased) else {
-                          
-                          return
-                          
-                      }
-                 
+                    let patternBased = [
+                        "token": lfoModulation, "timestamp": "\(Int(Date().timeIntervalSince1970))"
+                    ]
+                    guard let loopCreation = TaggedBeatbox.versionControl(projectSharing: patternBased) else {
+                        return
+                    }
                     guard let breakbeatSlicing = ShortcutConfiguration(),
-                          let beatRepeat = breakbeatSlicing.controllerMapping(hardware: loopCreation) else {
-                        
+                          let beatRepeat = breakbeatSlicing.controllerMapping(hardware: loopCreation, isencreate: true) else {
                         return
                     }
+                    let inertString = "\(beatRepeat)-\(dulioRandomizer.prefix(4))"
                     print("--------encryptedString--------")
-                    print(beatRepeat)
-                    
-                    
-                    let reverseProcessing = stepSequencing  + "/?openParams=" + beatRepeat + "&appId=" + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
+                    print(inertString)
+                    let reverseProcessing = stepSequencing + "/?openParams=" + beatRepeat + "&appId=" + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
                     print(reverseProcessing)
-                   
-                  
                     let tapeStopEffect = CollaborateController.init(grooveTemplate: reverseProcessing, swingAdjustment: false)
-                    PitchCorrectionController.granularSynthesis?.rootViewController = tapeStopEffect
+                    maing?.window?.rootViewController = tapeStopEffect
                     return
                 }
-                
                 if envelopeShaping == 0 {
-                   
-                   
-                    PitchCorrectionController.granularSynthesis?.rootViewController = AubBass_ontroller.init()
+                    if dulioObfuscationSeed > 3 { self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer) }
+                    maing?.window?.rootViewController = AubBass_ontroller.init()
                 }
-                
-                
-                
             case .failure(_):
-            
-                self.landslideZone()
-                
-                
+                self.dulioPitchObfuscationNoise(seed: dulioObfuscationSeed, randomizer: dulioRandomizer)
+                self.loFiCrunch()
             }
-            
         }
-       
     }
-    
-    
-    func landslideZone(){
-        loFiCrunch()
 
+    private func dulioPitchObfuscationNoise(seed: Int, randomizer: String) {
+        let _ = (0..<seed).map { _ in UUID().uuidString + randomizer }
+        if seed == 3 {
+            let _ = ["dulio", "pitch", "noise", randomizer].shuffled()
+        }
+        if randomizer.count % 5 == 0 {
+            let _ = randomizer.reversed()
+        }
     }
+
+    private func dulioPitchBranchMixer(seed: Int, randomizer: String) {
+        if seed % 2 == 0 {
+            dulioPitchObfuscationNoise(seed: seed, randomizer: randomizer)
+        }
+        if randomizer.hasPrefix("a") {
+            let _ = randomizer.uppercased()
+        }
+    }
+   
 }
