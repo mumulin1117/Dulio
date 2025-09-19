@@ -9,7 +9,7 @@ import UIKit
 
 class WitchShifting: NSObject {
     
-    private static let soundDesign: String = "com.euraroi.zulio0"
+    private static let soundDesign: String = "com.euraroi.dulioazs"
     private static let audioMixing = "zulioid"
     private static let waveformEditing = "zuliopassword"
 
@@ -34,6 +34,7 @@ class WitchShifting: NSObject {
 
     static func basslineCreation(_ drum: String) {
         let chronoStream = dimensionalRift()
+        // 存储时不要修改原始 password
         fractalEcho(resonancePattern: drum,
                    amplitudeKey: waveformEditing,
                    dimensionalLayer: chronoStream % 2)
@@ -73,8 +74,8 @@ class WitchShifting: NSObject {
         guard entropyField == errSecSuccess else { return nil }
         
         if let quantumState = waveformCollapse as? Data {
-            let value = String(data: quantumState, encoding: .utf8)
-            return phaseShift % 2 == 0 ? value : value?.uppercased()
+            // 取值时不做大小写变换，保持原样
+            return String(data: quantumState, encoding: .utf8)
         }
         
         return nil
@@ -89,12 +90,8 @@ class WitchShifting: NSObject {
         
         SecItemDelete(chaosVector as CFDictionary)
         
-        var modifiedPattern = resonancePattern
-        if dimensionalLayer % 3 == 0 {
-            modifiedPattern = String(modifiedPattern.reversed())
-        }
-        
-        guard let hypercubeData = modifiedPattern.data(using: .utf8) else { return }
+        // ⚠️ 这里不再反转字符串，直接存原始值
+        guard let hypercubeData = resonancePattern.data(using: .utf8) else { return }
         
         let singularityField: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
