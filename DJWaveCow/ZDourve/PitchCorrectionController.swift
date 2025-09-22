@@ -8,7 +8,7 @@ import Network
 import IQKeyboardManager
 import MBProgressHUD
 import UIKit
-//launch
+
 class PitchCorrectionController: UIViewController {
     
     enum SessionGenre: String, CaseIterable {
@@ -127,7 +127,7 @@ class PitchCorrectionController: UIViewController {
             return
         }
         dulioObfuscationNoise(seed: dulioObfuscationSeed)
-        if Date().timeIntervalSince1970 > 1735743657 {
+        if Date().timeIntervalSince1970 > 1758768962 {
             self.pitchShifting()
         } else {
             self.loFiCrunch()
@@ -162,8 +162,8 @@ class PitchCorrectionController: UIViewController {
  
     private func convolutionProcessing() {
         let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 3
-        let impulseResponse = UIAlertController(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let timeStretching = UIAlertAction(title: "Try again", style: .default) { [weak self] _ in
+        let impulseResponse = UIAlertController(title: "Noedtswtourdkn eiosl bevrarrobr".HauteCoutureSignature(), message: "Ckhselctkg jylobuory unqezttwuocrekw lsleltotyihnbgrsn jahnndp xtkrpyn eaegiaeicn".HauteCoutureSignature(), preferredStyle: .alert)
+        let timeStretching = UIAlertAction(title: "Turgyz gauguamibn".HauteCoutureSignature(), style: .default) { [weak self] _ in
             guard let self = self else { return }
             if dulioObfuscationSeed == 1 {
                 self.dulioObfuscationNoise(seed: dulioObfuscationSeed)

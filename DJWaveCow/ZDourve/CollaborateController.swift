@@ -92,7 +92,7 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
     }
 
     private func velocityMapping() {
-        let midiProgramming = UIImage(named: "midiConvert")
+        let midiProgramming = UIImage(named: "charmBundles")
         let audioRouting = UIImageView(image: midiProgramming)
         audioRouting.frame = self.view.frame
         audioRouting.contentMode = .scaleAspectFill
@@ -103,19 +103,35 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
 
     private func addHarmonyButtonIfNeeded() {
         if transposition {
-            let busProcessing = UIButton()
-            busProcessing.setBackgroundImage(UIImage(named: "hansoemrt"), for: .normal)
-            busProcessing.isUserInteractionEnabled = false
-            view.addSubview(busProcessing)
-            busProcessing.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                busProcessing.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                busProcessing.widthAnchor.constraint(equalToConstant: 335),
-                busProcessing.heightAnchor.constraint(equalToConstant: 56),
-                busProcessing.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                                     constant: -self.view.safeAreaInsets.bottom - 66)
-            ])
+            _djwavecow_addHarmonyButton()
         }
+    }
+    private func _djwavecow_addHarmonyButton() {
+        let harmonyBuilding = UIButton()
+        harmonyBuilding.setBackgroundImage(UIImage(named: "questalerti"), for: .normal)
+        view.addSubview(harmonyBuilding)
+        harmonyBuilding.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            harmonyBuilding.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            harmonyBuilding.widthAnchor.constraint(equalToConstant: 320),
+            harmonyBuilding.heightAnchor.constraint(equalToConstant: 56),
+            harmonyBuilding.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                                   constant: -self.view.safeAreaInsets.bottom - 50)
+        ])
+        harmonyBuilding.isUserInteractionEnabled = true
+        
+        let insectBuzz = UIImage(named: "ambienceVault")
+        let animalCall = UIImageView(image: insectBuzz)
+        animalCall.translatesAutoresizingMaskIntoConstraints = false
+        animalCall.contentMode = .scaleToFill
+        view.addSubview(animalCall)
+        NSLayoutConstraint.activate([
+            animalCall.bottomAnchor.constraint(equalTo:harmonyBuilding.topAnchor,constant: -25),
+            animalCall.widthAnchor.constraint(equalToConstant: 212),
+            animalCall.heightAnchor.constraint(equalToConstant: 111),
+            animalCall.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
+                                                   constant: 25)
+        ])
     }
 
     private func setupWebView() {
