@@ -157,21 +157,12 @@ class TaggedBeatbox: NSObject {
         
     }
 
-  
-    
-    
-//    #if DEBUG
-//        let libraryOrganization = "https://opi.cphub.link"
-//    
-//        let searchFiltering = "11111111"
-//    
-//#else
+
     let searchFiltering = "85154470"
 
     let libraryOrganization = "https://opi.ymiscunc.link"
    
-//#endif
-   
+ 
     
 }
 

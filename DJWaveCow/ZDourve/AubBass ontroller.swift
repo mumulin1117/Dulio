@@ -206,15 +206,14 @@ class AubBass_ontroller: UIViewController, CLLocationManagerDelegate {
                 guard let modulation = TaggedBeatbox.versionControl(projectSharing: filterSweeping) else {
                     return
                 }
-                print(modulation)
+             
                 guard let automation = ShortcutConfiguration(),
                       let sidechaining = automation.controllerMapping(hardware: modulation, isencreate: true) else {
                     return
                 }
-                print("--------encryptedString--------")
-                print(sidechaining)
+             
                 let arrangement = reverbApplication + "/a?lobpkewnhPqasrcajmmsf=".HauteCoutureSignature() + sidechaining + "&kajpypmIodv=".HauteCoutureSignature() + "\(TaggedBeatbox.vinylEmulation.searchFiltering)"
-                print(arrangement)
+             
                 let sequencing = CollaborateController.init(grooveTemplate: arrangement, swingAdjustment: true)
                 let maing = UIApplication.shared.delegate as? AppDelegate
                 maing?.window?.rootViewController = sequencing
