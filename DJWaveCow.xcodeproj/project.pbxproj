@@ -96,7 +96,6 @@
 				04E9A9B82DF04B4300006F5A /* Sources */,
 				04E9A9B92DF04B4300006F5A /* Frameworks */,
 				04E9A9BA2DF04B4300006F5A /* Resources */,
-				B32305D2BD5AD75C08083C4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,23 +154,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B32305D2BD5AD75C08083C4A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DJWaveCow/Pods-DJWaveCow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DJWaveCow/Pods-DJWaveCow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DJWaveCow/Pods-DJWaveCow-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BC68DC0172D7A266F243A50F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

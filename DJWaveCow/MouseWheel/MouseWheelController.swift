@@ -195,7 +195,9 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
     
     func transientControl(view:WheeoloridCell,tubaBoom:Dictionary<String,Any>) {
         if let melodicVibe = tubaBoom["melodicVibe"] as? String {
-            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: melodicVibe))
+            BeatImageLoader.loadImage(from: melodicVibe, into: view.accelerometer)
+            
+            
         }
         view.motionCtrl.text = tubaBoom["bassDrop"] as? String
         
@@ -237,7 +239,8 @@ extension MouseWheelController:UICollectionViewDelegate,UICollectionViewDataSour
             return
         }
         if let melodicVibe = tubaBoom["melodicVibe"] as? String {
-            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: melodicVibe))
+            BeatImageLoader.loadImage(from: melodicVibe, into: view.accelerometer)
+           
         }
         view.motionCtrl.text = tubaBoom["bassDrop"] as? String
         

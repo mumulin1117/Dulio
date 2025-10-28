@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -256,25 +256,7 @@ extension AppDelegate{
         if hubd{
             return
         }
-        SwiftyStoreKit.completeTransactions(atomically: true) { hike in
-            if hubd{
-                return
-            }
-            for jiaobao in hike {
-                if hubd{
-                    return
-                }
-                if jiaobao.transaction.transactionState == .purchased ||
-                    jiaobao.transaction.transactionState == .restored{
-                    if hubd{
-                        return
-                    }
-                    if jiaobao.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(jiaobao.transaction)
-                    }
-                }
-            }
-        }
+
     }
     
     

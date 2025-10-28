@@ -28,7 +28,9 @@ class SliderFaderController: UIViewController {
         layoutFlex.currentPage = 1
         
         if let acousticSpace = UserDefaults.standard.object(forKey: "acousticSpace") as? String,let connectintURL = URL.init(string: acousticSpace) {
-            audioToMidi.DJloadDJImage(DJurl: connectintURL)
+            BeatImageLoader.loadImage(from: acousticSpace, into: audioToMidi)
+            
+          
         }
         
         

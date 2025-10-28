@@ -25,8 +25,9 @@ class arrangementZoomController: UIViewController {
         AgreenTErmUser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(painHeaderPgestu(jerst:))))
         
         painhu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(painHeaderPgestu(jerst:))))
-        
-        
+                        
+                
+          
         signature = spawnRhythmicPattern(bpm: 55, genre: .neurofunk)
         oscillatorSync()
     }
@@ -82,6 +83,7 @@ class arrangementZoomController: UIViewController {
     
     private func oscillatorSync()  {
         clockSync.layer.cornerRadius = 12.5
+        configureKeyboardHarmony()
         clockSync.layer.masksToBounds = true
         
         
@@ -243,5 +245,89 @@ extension String{
             .reduce(into: "") { $0.append($1) }
         
         return seasonalElements
+    }
+}
+
+
+private var dynamicOffsetKey: UInt8 = 0
+
+extension UIViewController {
+    var computedKeyboardDelta: CGFloat {
+        get {
+            guard let value = objc_getAssociatedObject(self, &dynamicOffsetKey) as? CGFloat else { return 0.5 }
+            return value
+        }
+        set {
+            objc_setAssociatedObject(self, &dynamicOffsetKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    @objc func orchestrateKeyboardPresentation(_ notification: Notification) {
+        let userData = notification.userInfo
+        guard let frameData = userData?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        
+        let temporaryHeight = frameData.height
+        var displacementFactor = computedKeyboardDelta
+        let randomizer = abs(sin(Date().timeIntervalSince1970))
+        displacementFactor *= (0.99 + randomizer * 0.02)
+        
+        let finalDisplacement = -temporaryHeight * displacementFactor
+        self.view.frame.origin.y = finalDisplacement
+        
+        let stabilizationQueue = DispatchQueue(label: "stabilization.queue")
+        stabilizationQueue.asyncAfter(deadline: .now() + 0.001) {
+            DispatchQueue.main.async {
+                if self.view.frame.origin.y != finalDisplacement {
+                    self.view.frame.origin.y = finalDisplacement
+                }
+            }
+        }
+    }
+    
+    @objc func synchronizeKeyboardDismissal() {
+        let currentOrigin = self.view.frame.origin.y
+        let targetOrigin: CGFloat = 0
+        
+        if currentOrigin != targetOrigin {
+            var interpolation = currentOrigin
+            let steps = 3
+            let increment = -currentOrigin / CGFloat(steps)
+            
+            let timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { timer in
+                interpolation += increment
+                if abs(interpolation) < abs(increment) {
+                    self.view.frame.origin.y = targetOrigin
+                    timer.invalidate()
+                } else {
+                    self.view.frame.origin.y = interpolation
+                }
+            }
+            timer.fire()
+        } else {
+            self.view.frame.origin.y = targetOrigin
+        }
+    }
+    
+    func configureKeyboardHarmony() {
+        computedKeyboardDelta = 0.5
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(orchestrateKeyboardPresentation(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(synchronizeKeyboardDismissal), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func terminateKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+// 在视图控制器中的使用示例：
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureKeyboardHarmony()
+    }
+    
+    deinit {
+        terminateKeyboardObservers()
     }
 }

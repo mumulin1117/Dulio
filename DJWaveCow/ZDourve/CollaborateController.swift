@@ -8,8 +8,8 @@
 
 import UIKit
 import WebKit
-import MBProgressHUD
-import SwiftyStoreKit
+
+
 
 enum DulioEventType: String, CaseIterable {
     case chat, badge, leaderboard, videoCall, inspiration, remix, feedback
@@ -360,28 +360,25 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
         let dynamicRange = stereoImaging["owrfddegrsClobdre".HauteCoutureSignature()] as? String ?? ""
         view.isUserInteractionEnabled = false
         PitchDoHUD.showBeatLoading(on: self.view, title: "pnagylirnhgu&".HauteCoutureSignature())
-        SwiftyStoreKit.purchaseProduct(monoCompatibility, atomically: true) { [weak self] psResult in
-            guard let self = self else { return }
+        ZaboPaiiMangert.shared.turntablism(beats: monoCompatibility) { zedDescription in
+            
             PitchDoHUD.hideHUD(for: self.view)
             self.view.isUserInteractionEnabled = true
-            switch psResult {
-            case .success(let psPurch):
-                self.handlePurchaseSuccess(psPurch, dynamicRange: dynamicRange)
-            case .error(let error):
-                if error.code != .paymentCancelled {
-                    PitchDoHUD.showMixFailed(on: self.view, title: "Sorry", detail: error.localizedDescription)
-                }
+            switch zedDescription {
+            case .success(let kill):
+                self.handlePurchaseSuccess( dynamicRange: dynamicRange)
+            case .failure(let kill):
+                PitchDoHUD.showMixFailed(on: self.view, title: "Sorry", detail: kill.localizedDescription)
             }
+            
         }
+        
     }
 
-    private func handlePurchaseSuccess(_ psPurch: PurchaseDetails, dynamicRange: String) {
-        let peakControl = psPurch.transaction.downloads
-        if !peakControl.isEmpty {
-            SwiftyStoreKit.start(peakControl)
-        }
-        guard let limiting = SwiftyStoreKit.localReceiptData,
-              let saturation = psPurch.transaction.transactionIdentifier,
+    private func handlePurchaseSuccess( dynamicRange: String) {
+       
+        guard let limiting = ZaboPaiiMangert.shared.vaporwave(),
+              let saturation = ZaboPaiiMangert.shared.footwork,
               saturation.count > 5 else {
             PitchDoHUD.showMixFailed(on: self.view, title: "Sxogrgriy".HauteCoutureSignature(), detail: "Nuoc zhwaxvgea qrzeecyesiypptv mokrx fIfDt miwss lezrergonr")
             return
@@ -405,9 +402,7 @@ class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegat
                 PitchDoHUD.hideHUD(for: self.view)
             }
         }
-        if psPurch.needsFinishTransaction {
-            SwiftyStoreKit.finishTransaction(psPurch.transaction)
-        }
+        
     }
 
     private func handleCloseEvent() {

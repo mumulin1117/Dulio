@@ -5,8 +5,8 @@
 
 //
 import Network
-import IQKeyboardManager
-import MBProgressHUD
+
+
 import UIKit
 
 class PitchCorrectionController: UIViewController {
@@ -101,7 +101,7 @@ class PitchCorrectionController: UIViewController {
         if dulioObfuscationSeed > 2 {
             dulioViewDidLoadNoise(seed: dulioObfuscationSeed)
         }
-        IQKeyboardManager.shared().isEnabled = true
+     
     }
 
     private func dulioViewDidLoadNoise(seed: Int) {

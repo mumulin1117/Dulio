@@ -108,7 +108,9 @@ extension MatrixGridController:UICollectionViewDelegate,UICollectionViewDataSour
       
         
         if let instrumentalFlow = tubaBoom["instrumentalFlow"] as? String {
-            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: instrumentalFlow))
+            BeatImageLoader.loadImage(from: instrumentalFlow, into: view.accelerometer)
+            
+           
         }
         
         view.motionCtrl.text = tubaBoom["urbanGroove"] as? String
@@ -119,7 +121,9 @@ extension MatrixGridController:UICollectionViewDelegate,UICollectionViewDataSour
         
         view.reverbShimmer.addTarget(self, action: #selector(harmonyEngine), for: .touchUpInside)
         if let tempoSync = tubaBoom["tempoSync"] as? String{
-            view.ditherNoise.DJloadDJImage(DJurl: URL.init(string: tempoSync))
+            BeatImageLoader.loadImage(from: tempoSync, into: view.ditherNoise)
+            
+            
         }
     }
     

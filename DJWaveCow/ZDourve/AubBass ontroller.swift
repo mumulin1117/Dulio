@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import MBProgressHUD
+
 
 enum DJCommunityEvent: String {
     case liveSession, leaderboard, chat, badge

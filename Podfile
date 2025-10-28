@@ -6,8 +6,6 @@ target 'DJWaveCow' do
   use_frameworks!
 
   # Pods for DJWaveCow
-pod 'SDWebImage'
-pod 'SwiftyStoreKit'
-pod 'IQKeyboardManager'
-pod 'MBProgressHUD'
+
+
 end

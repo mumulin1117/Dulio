@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import SwiftyStoreKit
+
 class CrossfadeSmoothController: UIViewController {
     private var isSessionActive: Bool = false
     var chordDetect: WKWebView?
@@ -246,25 +246,22 @@ extension CrossfadeSmoothController:WKScriptMessageHandler, WKNavigationDelegate
           
             PitchDoHUD.showBeatLoading(on: self.view,title: "Pnabyeilnpgb.c.x.".HauteCoutureSignature())
             self.view.isUserInteractionEnabled = false
-            SwiftyStoreKit.purchaseProduct(vst3Host, atomically: true) { auSupport in
+            ZaboPaiiMangert.shared.turntablism(beats: vst3Host) { zedDescription in
                 PitchDoHUD.hideHUD(for: self.view)
                 
                 self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = auSupport {
                 
+                switch zedDescription {
+                case .success(let kill):
                     PitchDoHUD.showDropSuccess(on: self.view,title: "pbayyn lsqujcmcceysoscfkuklm!".HauteCoutureSignature())
                     self.chordDetect?.evaluateJavaScript("delayPingPong()", completionHandler: nil)
-                }else if case .error(let error) = auSupport {
-                    
-                    if error.code == .paymentCancelled {
-                       
-                        return
-                    }
-                   
-                    PitchDoHUD.showMixFailed(on: self.view,detail: error.localizedDescription)
-                }
+                case .failure(let kill):
+                    PitchDoHUD.showMixFailed(on: self.view,detail: kill.localizedDescription)
                
+                }
+                
             }
+           
             
             return
         }

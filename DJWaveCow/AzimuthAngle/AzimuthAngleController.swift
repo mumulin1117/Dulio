@@ -200,7 +200,8 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
     
     func transientControl(view:ActiveDulivCell,tubaBoom:Dictionary<String,Any>) {
         if let melodicVibe = tubaBoom["melodicVibe"] as? String {
-            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: melodicVibe))
+            BeatImageLoader.loadImage(from: melodicVibe, into: view.accelerometer)
+            
         }
         view.motionCtrl.text = tubaBoom["bassDrop"] as? String
         
@@ -236,11 +237,14 @@ extension AzimuthAngleController:UICollectionViewDelegate,UICollectionViewDataSo
     
     func acousticSpace(view:MopnmenDulivCell,tubaBoom:Dictionary<String,Any>) {
         if let echoChamber = tubaBoom["echoChamber"] as? Array<String>,let ret = echoChamber.first  {
-            view.headTurn.DJloadDJImage(DJurl: URL.init(string: ret))
+            BeatImageLoader.loadImage(from: ret, into: view.headTurn)
+            
         }
         
         if let instrumentalFlow = tubaBoom["instrumentalFlow"] as? String {
-            view.accelerometer.DJloadDJImage(DJurl: URL.init(string: instrumentalFlow))
+            BeatImageLoader.loadImage(from: instrumentalFlow, into: view.accelerometer)
+            
+            
         }
         
         view.motionCtrl.text = tubaBoom["urbanGroove"] as? String
