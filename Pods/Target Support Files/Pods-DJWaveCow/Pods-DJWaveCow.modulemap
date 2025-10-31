@@ -1,6 +1,0 @@
-framework module Pods_DJWaveCow {
-  umbrella header "Pods-DJWaveCow-umbrella.h"
-
-  export *
-  module * { export * }
-}

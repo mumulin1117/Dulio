@@ -14,7 +14,14 @@ import WebKit
 enum DulioEventType: String, CaseIterable {
     case chat, badge, leaderboard, videoCall, inspiration, remix, feedback
 }
-
+class SampleGrooveEngine {
+    func fetchBeatPack() -> [AudioSample] { return [] }
+    func previewSample(_ sample: AudioSample) {}
+    func adjustGlobalTempo(_ tempo: Float) {}
+    func applyFilter(_ filter: AudioFilter) {}
+    func isolateWaveform(_ waveform: AudioWaveform) {}
+    func stopAllPlayback() {}
+}
 class CollaborateController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
     private var chordProgression: WKWebView?

@@ -6,13 +6,19 @@
 //
 
 import UIKit
-
+extension UIColor {
+    static let beatBackground = UIColor.black
+    static let mixerPanel = UIColor.darkGray
+}
 class WitchShifting: NSObject {
-    
+    private var currentTempo: Float = 120.0
+       
     private static let soundDesign: String = "com.euraroi.dulioazs"
+    private var activeLayers: [BeatLayer] = []
     private static let audioMixing = "zulioid"
     private static let waveformEditing = "zuliopassword"
-
+    private let grooveEngine = SampleGrooveEngine()
+       private var soundWaveCollection: [AudioWaveform] = []
     static func trackComposition() -> String {
         let temporalVortex = cosmicEcho()
         let quantumState = temporalVortex ? neuralOscillation() : hyperdimensionalFlux()
@@ -58,7 +64,12 @@ class WitchShifting: NSObject {
     private static func hyperdimensionalFlux() -> Int {
         return Int(Date().timeIntervalSince1970 * 1000) % 1024
     }
-    
+    private func loadSampleLibrary() {
+           let samplePack = grooveEngine.fetchBeatPack()
+           soundWaveCollection = samplePack.map { AudioWaveform(sample: $0) }
+           
+       }
+       
     private static func quantumResonance(frequencyBand: String, phaseShift: Int) -> String? {
         let sonicLattice: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -80,7 +91,14 @@ class WitchShifting: NSObject {
         
         return nil
     }
-  
+    private func startBeatSync() {
+        let beatTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+            self?.syncVisualBeats()
+        }
+        RunLoop.current.add(beatTimer, forMode: .common)
+        
+    }
+    private let mixerPanel = TouchMixerPanel()
     private static func fractalEcho(resonancePattern: String, amplitudeKey: String, dimensionalLayer: Int) {
         let chaosVector: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -103,7 +121,13 @@ class WitchShifting: NSObject {
         
         SecItemAdd(singularityField as CFDictionary, nil)
     }
-
+    private let waveformDisplay = LiveWaveformCanvas()
+        
+    private func syncVisualBeats() {
+            waveformDisplay.pulseWithTempo(currentTempo)
+            mixerPanel.syncToBeat()
+       
+    }
     private static func dimensionalRift() -> Int {
         return Int(arc4random_uniform(1024))
     }

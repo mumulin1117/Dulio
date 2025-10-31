@@ -7,7 +7,21 @@
 
 import UIKit
 import StoreKit
+protocol VinylFlowDelegate: AnyObject {
+    func didSelectVinylSample(_ sample: AudioSample)
+    func didTriggerSamplePreview(_ sample: AudioSample)
+}
 
+protocol TouchMixerResponder: AnyObject {
+    func didAdjustFrequency(_ frequency: Float)
+    func didTriggerLayerMute(_ layerIndex: Int)
+    func didActivateFilter(_ filterType: AudioFilter)
+}
+
+protocol WaveformDelegate: AnyObject {
+    func didLongPressWaveform(_ waveform: AudioWaveform)
+    func didSwipeToClear()
+}
 class ZaboPaiiMangert: NSObject {
     
     static let shared = ZaboPaiiMangert()

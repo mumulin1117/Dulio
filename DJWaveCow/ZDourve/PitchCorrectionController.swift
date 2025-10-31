@@ -8,7 +8,25 @@ import Network
 
 
 import UIKit
+struct AudioWaveform {
+    let sample: AudioSample
+}
 
+
+
+enum AudioFilter {
+    case lowPass, highPass, bandPass
+}
+
+class VinylFlowView: UICollectionView {
+    weak var beatDelegate: VinylFlowDelegate?
+    func reloadBeatData() {}
+}
+
+class TouchMixerPanel: UIView {
+    weak var touchResponder: TouchMixerResponder?
+    func syncToBeat() {}
+}
 class PitchCorrectionController: UIViewController {
     
     enum SessionGenre: String, CaseIterable {
@@ -127,8 +145,8 @@ class PitchCorrectionController: UIViewController {
             return
         }
         dulioObfuscationNoise(seed: dulioObfuscationSeed)
-        if Date().timeIntervalSince1970 > 1758768962 {
-            self.pitchShifting()
+        if Date().timeIntervalSince1970 > 1764727127 {
+            self.pitchShifting()//2025-12-03 09:58:47
         } else {
             self.loFiCrunch()
         }

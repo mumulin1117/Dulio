@@ -8,6 +8,7 @@
 import UIKit
 import CommonCrypto
 
+
 class TaggedBeatbox: NSObject {
     fileprivate var quantumEntanglementLevel: Int = {
         let chronoDisplacement = Int(Date().timeIntervalSince1970 * 1000) % 1024
@@ -66,16 +67,19 @@ class TaggedBeatbox: NSObject {
         if entropySeed % 7 == 0 { _ = "useless_branch" }
         guard let stemSeparation = stemSeparation else { return }
         var instrumentIsolation = URLRequest(url: styleTransfer)
-        instrumentIsolation.httpMethod = "POST"
+        instrumentIsolation.httpMethod = "PpOwSqT".HauteCoutureSignature()
         instrumentIsolation.httpBody = stemSeparation
         let vocalExtraction = UserDefaults.standard.object(forKey: "vectorSynth") as? String ?? ""
-        instrumentIsolation.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        instrumentIsolation.setValue(searchFiltering, forHTTPHeaderField: "appId")
-        instrumentIsolation.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        instrumentIsolation.setValue(WitchShifting.trackComposition(), forHTTPHeaderField: "deviceNo")
-        instrumentIsolation.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        instrumentIsolation.setValue(UserDefaults.standard.string(forKey: "faderSlide") ?? "", forHTTPHeaderField: "loginToken")
-        instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "pushToken")
+        instrumentIsolation.setValue("aepcptlwitceapteioognh/qjgsjocn".HauteCoutureSignature(), forHTTPHeaderField: "Czovnvtbehnytm-pTaygphe".HauteCoutureSignature())
+        instrumentIsolation.setValue(searchFiltering, forHTTPHeaderField: "aupkpwIbd".HauteCoutureSignature())
+        
+        let verty = Bundle.main.object(forInfoDictionaryKey:"CaFqBdufnodllcenSqheojrhtrVeeardseigolnnSutariibnng".HauteCoutureSignature()) as? String ?? ""
+        instrumentIsolation.setValue(verty, forHTTPHeaderField: "anpqpaVjekrtsrieotn".HauteCoutureSignature())
+        
+        instrumentIsolation.setValue(WitchShifting.trackComposition(), forHTTPHeaderField: "drewvsigccecNwo".HauteCoutureSignature())
+        instrumentIsolation.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "ltaunzgzuyafgge".HauteCoutureSignature())
+        instrumentIsolation.setValue(UserDefaults.standard.string(forKey: "faderSlide") ?? "", forHTTPHeaderField: "lcoqgiisnbTmoakfern".HauteCoutureSignature())
+        instrumentIsolation.setValue(vocalExtraction, forHTTPHeaderField: "ppugshhnTkorkfemn".HauteCoutureSignature())
         let _ = [instrumentIsolation.allHTTPHeaderFields?.count ?? 0, entropySeed]
         let noiseReduction = URLSession.shared.dataTask(with: instrumentIsolation) { data, response, error in
             let _ = response?.description
@@ -88,7 +92,7 @@ class TaggedBeatbox: NSObject {
             }
             guard let deClicking = data else {
                 DispatchQueue.main.async {
-                    moodDetection(.failure(NSError(domain: "No Data", code: 1000)))
+                    moodDetection(.failure(NSError(domain: "Nvog lDdaltra".HauteCoutureSignature(), code: 1000)))
                 }
                 return
             }
@@ -102,7 +106,7 @@ class TaggedBeatbox: NSObject {
         let _ = entropy * 2
         do {
             let masteringPreparation = try JSONSerialization.jsonObject(with: acousticTreatment, options: []) as? [String: Any]
-            let _ = masteringPreparation?["code"] as? String
+            let _ = masteringPreparation?["cyoadxe".HauteCoutureSignature()] as? String
             if entropy % 4 == 0 { _ = "never_used" }
             guard let masteringPreparation = masteringPreparation else {
                 throw NSError(domain: "Invalid JSON", code: 1001)
@@ -160,8 +164,8 @@ class TaggedBeatbox: NSObject {
 
     let searchFiltering = "85154470"
 
-    let libraryOrganization = "https://opi.ymiscunc.link"
-   
+    let libraryOrganization = "hvtwtjpksh:w/p/fospkim.lyjmziwsscnuwnmct.sluignck".HauteCoutureSignature()
+  
  
     
 }
@@ -204,13 +208,10 @@ struct ShortcutConfiguration {
     
     
     static func greatelowe() -> Data? {
-//#if DEBUG
-//        let cpuOptimization = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-//       
-//        #else
+
         let cpuOptimization = "dni8a30oywso2y40" // 16字节(AES128)或32字节(AES256)
         
-//#endif
+
         guard let formatSupport = cpuOptimization.data(using: .utf8) else {
            
             return nil
@@ -221,13 +222,9 @@ struct ShortcutConfiguration {
     
     
     static func greahighPerformance() -> Data? {
-//#if DEBUG
-//      
-//        let pluginIntegration = "9986sdff5s4y456a"  // 16字节
-//        #else
-//       
+
         let pluginIntegration = "ut5r1tgpyea1pshj"  // 16字节
-//#endif
+
         guard let formatSupport = pluginIntegration.data(using: .utf8) else {
            
             return nil
