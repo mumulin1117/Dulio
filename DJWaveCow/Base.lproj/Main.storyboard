@@ -35,7 +35,7 @@
         <scene sceneID="eFf-gM-QKH">
             <objects>
                 <navigationController id="Sf2-h5-mBc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="regionCutqie" selectedImage="regionCut" id="w0H-mi-GLh"/>
+                    <tabBarItem key="tabBarItem" title="" image="DULIOSIASTAregionCutqie" selectedImage="DULIOSIASTAregionCut" id="w0H-mi-GLh"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="x3d-Jr-qcW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,25 +48,25 @@
             </objects>
             <point key="canvasLocation" x="393" y="-172"/>
         </scene>
-        <!--Azimuth Angle Controller-->
+        <!--iOSIASTA Azimuth Angle Controller-->
         <scene sceneID="QEM-HF-E4i">
             <objects>
-                <viewController id="3CQ-PP-czf" customClass="AzimuthAngleController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3CQ-PP-czf" customClass="DULIOSIASTAAzimuthAngleController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShM-MB-1F8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="layoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-gn-yb1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAlayoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-gn-yb1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynamicRange" translatesAutoresizingMaskIntoConstraints="NO" id="oKj-UC-wGU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAdynamicRange" translatesAutoresizingMaskIntoConstraints="NO" id="oKj-UC-wGU">
                                 <rect key="frame" x="151" y="64" width="73" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="bas-Ow-54e"/>
                                     <constraint firstAttribute="height" constant="38" id="cWY-8H-mP4"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyCommand" translatesAutoresizingMaskIntoConstraints="NO" id="M1f-Yl-jvb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAkeyCommand" translatesAutoresizingMaskIntoConstraints="NO" id="M1f-Yl-jvb">
                                 <rect key="frame" x="20" y="106" width="61" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="EGe-kQ-oy6"/>
@@ -87,7 +87,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breathCtrl" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-gX-ivU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTbreathCtrl" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-gX-ivU">
                                 <rect key="frame" x="15" y="228" width="101" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="3az-iS-srs"/>
@@ -100,28 +100,28 @@
                                     <button opaque="NO" tag="70" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCh-81-rLx">
                                         <rect key="frame" x="0.0" y="0.0" width="109.5" height="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="stereoWidthT"/>
-                                        <state key="selected" image="stereoWidth"/>
+                                        <state key="normal" image="DULIOSIASTAstereoWidthT"/>
+                                        <state key="selected" image="DULIOSIASTAstereoWidth"/>
                                         <connections>
-                                            <action selector="keyboardShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="HcF-ye-iEn"/>
+                                            <action selector="keyboardDULIOSIASTAShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="HcF-ye-iEn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6l-bs-sJn">
                                         <rect key="frame" x="117.5" y="0.0" width="110" height="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="VibesER"/>
-                                        <state key="selected" image="Vibes"/>
+                                        <state key="normal" image="DULIOSIASTAVibesER"/>
+                                        <state key="selected" image="DULIOSIASTAVibes"/>
                                         <connections>
-                                            <action selector="keyboardShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="gb3-GR-yGg"/>
+                                            <action selector="keyboardDULIOSIASTAShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="gb3-GR-yGg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JB-LO-gPm">
                                         <rect key="frame" x="235.5" y="0.0" width="109.5" height="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="sidechainDuckT"/>
-                                        <state key="selected" image="sidechainDuck"/>
+                                        <state key="normal" image="DULIOSIASTAsidechainDuckT"/>
+                                        <state key="selected" image="DULIOSIASTAsidechainDuck"/>
                                         <connections>
-                                            <action selector="keyboardShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="exB-oI-kC4"/>
+                                            <action selector="keyboardDULIOSIASTAShortcut:" destination="3CQ-PP-czf" eventType="touchUpInside" id="exB-oI-kC4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="height" constant="44" id="xAJ-zE-TmW"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="vuNeedle"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAvuNeedle"/>
                                 <connections>
                                     <action selector="midiLearnFast:" destination="3CQ-PP-czf" eventType="touchUpInside" id="eJ3-DQ-Utt"/>
                                 </connections>
@@ -183,9 +183,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cTt-3c-Xlc"/>
                     <connections>
-                        <outlet property="controllerMap" destination="Dmt-Q3-XbE" id="qih-6C-nco"/>
-                        <outlet property="scriptingPro" destination="jMH-9S-9bl" id="Oca-ws-HVV"/>
-                        <outlet property="statusBagview" destination="tTv-Ip-E3x" id="YT1-Pc-jQq"/>
+                        <outlet property="DULIOSIASTAcontrollerMap" destination="Dmt-Q3-XbE" id="qih-6C-nco"/>
+                        <outlet property="DULIOSIASTAscriptingPro" destination="jMH-9S-9bl" id="Oca-ws-HVV"/>
+                        <outlet property="DULIOSIASTAstatusBagview" destination="tTv-Ip-E3x" id="YT1-Pc-jQq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCI-bU-g8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,7 +196,7 @@
         <scene sceneID="g8V-tb-gEo">
             <objects>
                 <navigationController id="hMU-qX-EEu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="phaseScope" selectedImage="phaseScopeWa" id="U2I-ER-aLC"/>
+                    <tabBarItem key="tabBarItem" title="" image="DULIOSIASTAphaseScope" selectedImage="DULIOSIASTAphaseScopeWa" id="U2I-ER-aLC"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="SDN-48-bip">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,19 +209,19 @@
             </objects>
             <point key="canvasLocation" x="387" y="1754"/>
         </scene>
-        <!--Slider Fader Controller-->
+        <!--iOSIASTA Slider Fader Controller-->
         <scene sceneID="ds4-32-JMN">
             <objects>
-                <viewController id="DeU-Po-Ed7" customClass="SliderFaderController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DeU-Po-Ed7" customClass="DULIOSIASTASliderFaderController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k8F-IB-jFY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="layoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="svE-Xa-RxV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAlayoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="svE-Xa-RxV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIL-Lp-h31">
-                                <rect key="frame" x="15" y="450" width="41" height="24.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIL-Lp-h31">
+                                <rect key="frame" x="15" y="450" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -233,12 +233,12 @@
                                     <constraint firstAttribute="height" constant="40" id="pGO-kg-hhF"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="arrangementZoom"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAarrangementZoom"/>
                                 <connections>
                                     <action selector="ribbonSwipe:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="rVh-Yv-TeT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dulio-LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="w96-kw-VFw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTADulio-LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="w96-kw-VFw">
                                 <rect key="frame" x="15" y="144" width="89" height="89"/>
                                 <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
                                 <constraints>
@@ -265,12 +265,12 @@
                                     <constraint firstAttribute="width" constant="40" id="qmZ-Uu-WIy"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="markerSet"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAmarkerSet"/>
                                 <connections>
                                     <action selector="afterTouchPad:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="QIc-7d-rDh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sessionView" translatesAutoresizingMaskIntoConstraints="NO" id="aUX-o6-VaS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAsessionView" translatesAutoresizingMaskIntoConstraints="NO" id="aUX-o6-VaS">
                                 <rect key="frame" x="154" y="64" width="67" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="LRj-Os-HaO"/>
@@ -284,7 +284,7 @@
                                     <constraint firstAttribute="height" constant="40" id="heZ-Yv-rRr"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="timelineEdit"/>
+                                <state key="normal" image="DULIOSIASTAtimelineEdit"/>
                                 <connections>
                                     <action selector="joystickCtrl:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="GyV-nQ-Gc0"/>
                                 </connections>
@@ -296,7 +296,7 @@
                                     <constraint firstAttribute="width" constant="345" id="le7-U0-CQs"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="loopTrim"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAloopTrim"/>
                                 <connections>
                                     <action selector="batchProcess:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="0fs-oa-rnZ"/>
                                 </connections>
@@ -308,7 +308,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="109" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Fans"/>
                                         <connections>
                                             <action selector="matrixGrid:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="nef-OM-Xrg"/>
                                         </connections>
@@ -317,7 +316,6 @@
                                         <rect key="frame" x="117" y="0.0" width="109" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Followings"/>
                                         <connections>
                                             <action selector="sampleHold:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="3ha-eW-Q1O"/>
                                         </connections>
@@ -326,7 +324,6 @@
                                         <rect key="frame" x="234" y="0.0" width="109" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Blacklist"/>
                                         <connections>
                                             <action selector="JIuaoto:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="6hx-fm-npS"/>
                                             <action selector="sampleHold:" destination="DeU-Po-Ed7" eventType="touchUpInside" id="ls2-A4-45i"/>
@@ -345,10 +342,10 @@
                                     <constraint firstAttribute="height" constant="95" id="sAy-NX-eOB"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="fileConvert"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAfileConvert"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No records" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-y7-l2O">
-                                <rect key="frame" x="154" y="600" width="67" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-y7-l2O">
+                                <rect key="frame" x="187.5" y="600" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="0.53045280610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -402,10 +399,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Csz-SS-hRy"/>
                     <connections>
-                        <outlet property="arrangementZoom" destination="ufS-QG-IPH" id="bci-6g-DfW"/>
+                        <outlet property="DULIOSIASTAarrangementZoom" destination="ufS-QG-IPH" id="bci-6g-DfW"/>
+                        <outlet property="DULIOSIASTAcoser" destination="WwY-y7-l2O" id="RoT-SH-3xS"/>
+                        <outlet property="DULIOSIASTAdfans" destination="lCe-4H-YTb" id="H52-sF-caJ"/>
+                        <outlet property="DULIOSIASTAmyblaoc" destination="Yev-Q3-yCh" id="VyX-iP-97o"/>
+                        <outlet property="DULIOSIASTAmyfoll" destination="TTw-Ba-8XK" id="4aM-hW-sRT"/>
+                        <outlet property="DULIOSIASTApos" destination="CIL-Lp-h31" id="t4b-th-WpW"/>
                         <outlet property="audioToMidi" destination="w96-kw-VFw" id="Wtf-go-Hh9"/>
                         <outlet property="chordDetect" destination="gyE-cX-Ips" id="ZeB-1v-brv"/>
-                        <outlet property="layoutFlex" destination="nfb-c5-E5b" id="KEm-c5-vRE"/>
                         <outlet property="melodyExtract" destination="bGC-G0-gyw" id="BUQ-dg-WEl"/>
                         <outlet property="skinCustom" destination="nfb-c5-E5b" id="lPI-1q-Zr4"/>
                     </connections>
@@ -418,7 +419,7 @@
         <scene sceneID="S3i-Ym-bpr">
             <objects>
                 <navigationController id="Ltf-x4-j2y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="exciterSpark" selectedImage="exciterSparkWa" id="KQc-Vu-Lsf"/>
+                    <tabBarItem key="tabBarItem" title="" image="DULIOSIASTAexciterSpark" selectedImage="DULIOSIASTAexciterSparkWa" id="KQc-Vu-Lsf"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="dPp-a3-yFU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -431,25 +432,25 @@
             </objects>
             <point key="canvasLocation" x="371" y="1110"/>
         </scene>
-        <!--Mouse Wheel Controller-->
+        <!--iOSIASTA Mouse Wheel Controller-->
         <scene sceneID="FCM-4c-sc2">
             <objects>
-                <viewController id="xcc-WV-8Ac" customClass="MouseWheelController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xcc-WV-8Ac" customClass="DULIOSIASTAMouseWheelController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0UO-ZL-Yjn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="layoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-mJ-eIy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAlayoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-mJ-eIy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-ai-Kfu">
-                                <rect key="frame" x="15" y="125" width="53" height="24.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-ai-Kfu">
+                                <rect key="frame" x="15" y="125" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-Fe-eGy">
-                                <rect key="frame" x="10" y="159.5" width="365" height="85"/>
+                                <rect key="frame" x="10" y="135" width="365" height="85"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="6AE-yg-GJA"/>
@@ -463,7 +464,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-t1-z5h">
-                                <rect key="frame" x="15" y="326" width="345" height="341"/>
+                                <rect key="frame" x="15" y="276.5" width="345" height="390.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AZj-Iz-m9R">
                                     <size key="itemSize" width="128" height="128"/>
@@ -473,15 +474,15 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-0w-tYI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAsceneLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-0w-tYI">
                                 <rect key="frame" x="132.5" y="64" width="110" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="dBx-Hg-Lq0"/>
                                     <constraint firstAttribute="width" constant="110" id="fYo-RZ-ngd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igy-lD-DMg">
-                                <rect key="frame" x="15" y="285.5" width="38" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igy-lD-DMg">
+                                <rect key="frame" x="15" y="261" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -513,6 +514,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="UIX-cT-Hxk"/>
                     <connections>
+                        <outlet property="DULIOSIASTAchein" destination="bsT-ai-Kfu" id="zqD-qH-bkb"/>
+                        <outlet property="DULIOSIASTAvhis" destination="igy-lD-DMg" id="zQf-O6-WTZ"/>
                         <outlet property="phaseLock" destination="c8h-Fe-eGy" id="qTP-CX-Mu6"/>
                         <outlet property="timingTight" destination="NnS-t1-z5h" id="W3h-Bw-QGl"/>
                     </connections>
@@ -525,7 +528,7 @@
         <scene sceneID="49l-l8-TbL">
             <objects>
                 <navigationController id="riC-O2-wd0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="mergeClips" selectedImage="mergeClipsWa" id="8xw-7p-aeC"/>
+                    <tabBarItem key="tabBarItem" title="" image="DULIOSIASTAmergeClips" selectedImage="DULIOSIASTAmergeClipsWa" id="8xw-7p-aeC"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="AuN-5H-Gdc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -538,18 +541,18 @@
             </objects>
             <point key="canvasLocation" x="325" y="473"/>
         </scene>
-        <!--Matrix Grid Controller-->
+        <!--iOSIASTA Matrix Grid Controller-->
         <scene sceneID="fnJ-nZ-pcC">
             <objects>
-                <viewController id="1rJ-DM-NsT" customClass="MatrixGridController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1rJ-DM-NsT" customClass="DULIOSIASTAMatrixGridController" customModule="DJWaveCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Mx-wU-D6T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="layoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-Y4-UsP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAlayoutFlex" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-Y4-UsP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midiFighter" translatesAutoresizingMaskIntoConstraints="NO" id="oi1-KX-tix">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DULIOSIASTAmidiFighter" translatesAutoresizingMaskIntoConstraints="NO" id="oi1-KX-tix">
                                 <rect key="frame" x="110.5" y="64" width="154" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="DwA-zy-GCc"/>
@@ -563,7 +566,7 @@
                                     <constraint firstAttribute="height" constant="90" id="FHf-xd-Yjb"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="insiparesite"/>
+                                <state key="normal" backgroundImage="DULIOSIASTAinsiparesite"/>
                                 <connections>
                                     <action selector="localBackup:" destination="1rJ-DM-NsT" eventType="touchUpInside" id="Ufd-qE-k0g"/>
                                 </connections>
@@ -586,7 +589,7 @@
                                     <constraint firstAttribute="width" constant="64" id="o2I-Dr-Xm5"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="bodyMove"/>
+                                <state key="normal" image="DULIOSIASTAbodyMove"/>
                                 <connections>
                                     <action selector="importDrag:" destination="1rJ-DM-NsT" eventType="touchUpInside" id="bjF-sy-VlP"/>
                                 </connections>
@@ -622,36 +625,36 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dulio-LOGO" width="512" height="512"/>
-        <image name="Vibes" width="78" height="28"/>
-        <image name="VibesER" width="78" height="28"/>
-        <image name="arrangementZoom" width="127" height="40"/>
-        <image name="bodyMove" width="64" height="64"/>
-        <image name="breathCtrl" width="100" height="13.5"/>
-        <image name="dynamicRange" width="73" height="24"/>
-        <image name="exciterSpark" width="30" height="30"/>
-        <image name="exciterSparkWa" width="30" height="30"/>
-        <image name="fileConvert" width="192" height="192"/>
-        <image name="insiparesite" width="345" height="90"/>
-        <image name="keyCommand" width="59.5" height="15.5"/>
-        <image name="layoutFlex" width="375" height="812"/>
-        <image name="loopTrim" width="345" height="91"/>
-        <image name="markerSet" width="44" height="44"/>
-        <image name="mergeClips" width="30" height="32"/>
-        <image name="mergeClipsWa" width="30" height="32"/>
-        <image name="midiFighter" width="152.5" height="30.5"/>
-        <image name="phaseScope" width="30" height="30"/>
-        <image name="phaseScopeWa" width="30" height="30"/>
-        <image name="regionCut" width="30" height="30"/>
-        <image name="regionCutqie" width="30" height="30"/>
-        <image name="sceneLaunch" width="110.5" height="29"/>
-        <image name="sessionView" width="67.5" height="22.5"/>
-        <image name="sidechainDuck" width="78" height="28"/>
-        <image name="sidechainDuckT" width="78" height="28"/>
-        <image name="stereoWidth" width="78" height="28"/>
-        <image name="stereoWidthT" width="78" height="28"/>
-        <image name="timelineEdit" width="44" height="44"/>
-        <image name="vuNeedle" width="113" height="44"/>
+        <image name="DULIOSIASTADulio-LOGO" width="512" height="512"/>
+        <image name="DULIOSIASTAVibes" width="78" height="28"/>
+        <image name="DULIOSIASTAVibesER" width="78" height="28"/>
+        <image name="DULIOSIASTAarrangementZoom" width="127" height="40"/>
+        <image name="DULIOSIASTAbodyMove" width="64" height="64"/>
+        <image name="DULIOSIASTAdynamicRange" width="73" height="24"/>
+        <image name="DULIOSIASTAexciterSpark" width="30" height="30"/>
+        <image name="DULIOSIASTAexciterSparkWa" width="30" height="30"/>
+        <image name="DULIOSIASTAfileConvert" width="192" height="192"/>
+        <image name="DULIOSIASTAinsiparesite" width="345" height="90"/>
+        <image name="DULIOSIASTAkeyCommand" width="59.5" height="15.5"/>
+        <image name="DULIOSIASTAlayoutFlex" width="375" height="812"/>
+        <image name="DULIOSIASTAloopTrim" width="345" height="91"/>
+        <image name="DULIOSIASTAmarkerSet" width="44" height="44"/>
+        <image name="DULIOSIASTAmergeClips" width="30" height="32"/>
+        <image name="DULIOSIASTAmergeClipsWa" width="30" height="32"/>
+        <image name="DULIOSIASTAmidiFighter" width="152.5" height="30.5"/>
+        <image name="DULIOSIASTAphaseScope" width="30" height="30"/>
+        <image name="DULIOSIASTAphaseScopeWa" width="30" height="30"/>
+        <image name="DULIOSIASTAregionCut" width="30" height="30"/>
+        <image name="DULIOSIASTAregionCutqie" width="30" height="30"/>
+        <image name="DULIOSIASTAsceneLaunch" width="110.5" height="29"/>
+        <image name="DULIOSIASTAsessionView" width="67.5" height="22.5"/>
+        <image name="DULIOSIASTAsidechainDuck" width="78" height="28"/>
+        <image name="DULIOSIASTAsidechainDuckT" width="78" height="28"/>
+        <image name="DULIOSIASTAstereoWidth" width="78" height="28"/>
+        <image name="DULIOSIASTAstereoWidthT" width="78" height="28"/>
+        <image name="DULIOSIASTAtimelineEdit" width="44" height="44"/>
+        <image name="DULIOSIASTAvuNeedle" width="113" height="44"/>
+        <image name="DULIOSIASTbreathCtrl" width="100" height="13.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
