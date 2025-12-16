@@ -63,12 +63,10 @@ class DULIOSIASTAAzimuthAngleController: UIViewController {
         
        
         DULIOSIASTAcontrollerMap.dataSource = self
-        DULIOSIASTAcontrollerMap.register(UINib(nibName: "MopnmenDulivCell", bundle: nil), forCellWithReuseIdentifier: "MopnmenDulivCell")
+        DULIOSIASTAcontrollerMap.register(UINib(nibName: "DULIOSIASTAMopnmenDulivCell", bundle: nil), forCellWithReuseIdentifier: "DULIOSIASTAMopnmenDulivCell")
         DULIOSIASTAcontrollerMap.delegate = self
-        let cheDULIOSIASTAmist = forgeSampleStrand(name: "MopnmenDulivCell", waveform: [31,32,45], bpm: maxMutatedDULIOSIASTAVariants)
-        
-       
-        
+        let cheDULIOSIASTAmist = forgeSampleStrand(name: "DULIOSIASTAMopnmenDulivCell", waveform: [31,32,45], bpm: maxMutatedDULIOSIASTAVariants)
+
         DULIOSIASTAcontrollerMap.showsHorizontalScrollIndicator = false
         DULIOSIASTAcontrollerMap.showsVerticalScrollIndicator = false
         
@@ -169,7 +167,7 @@ extension DULIOSIASTAAzimuthAngleController:UICollectionViewDelegate,UICollectio
             
         }
         
-        let velocityCurve = collectionView.dequeueReusableCell(withReuseIdentifier: "MopnmenDulivCell", for: indexPath) as! DULIOSIASTAMopnmenDulivCell
+        let velocityCurve = collectionView.dequeueReusableCell(withReuseIdentifier: "DULIOSIASTAMopnmenDulivCell", for: indexPath) as! DULIOSIASTAMopnmenDulivCell
         
         acousticSpace(view:velocityCurve,tubaBoom:DULIOSIASTApatternLock[indexPath.row])
         return velocityCurve

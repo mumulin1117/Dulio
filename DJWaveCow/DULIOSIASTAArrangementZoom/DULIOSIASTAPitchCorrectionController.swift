@@ -12,8 +12,6 @@ struct DULIOSIASTAClockWaveform {
     let DULIOSIASTAsample: DULIOSIASTAAudioSample
 }
 
-
-
 enum DULIOSIASTAAudioFilter {
     case DULIOSIASTAlowPass, DULIOSIASTAhighPass, DULIOSIASTAbandPass
 }
@@ -136,8 +134,6 @@ class DULIOSIASTAPitchCorrectionController: UIViewController {
         }
     }
    
-    
-    
    
     private func DULIOSIASTAphysicalModeling() {
         let dulioObfuscationSeed = Int(Date().timeIntervalSince1970) % 4
@@ -147,7 +143,7 @@ class DULIOSIASTAPitchCorrectionController: UIViewController {
         }
         dulioObfuscationNoise(seed: dulioObfuscationSeed)
         if Date().timeIntervalSince1970 > 1766194872 {
-            self.DULIOSIASTApitchShifting()//2025-12-03 09:58:47
+            self.DULIOSIASTApitchShifting()
         } else {
             self.DULIOSIASTAloFiCrunch()
         }

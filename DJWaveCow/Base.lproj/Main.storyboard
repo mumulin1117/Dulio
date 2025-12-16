@@ -402,6 +402,7 @@
                         <outlet property="DULIOSIASTAarrangementZoom" destination="ufS-QG-IPH" id="bci-6g-DfW"/>
                         <outlet property="DULIOSIASTAcoser" destination="WwY-y7-l2O" id="RoT-SH-3xS"/>
                         <outlet property="DULIOSIASTAdfans" destination="lCe-4H-YTb" id="H52-sF-caJ"/>
+                        <outlet property="DULIOSIASTAlayoutFlex" destination="nfb-c5-E5b" id="cU5-fB-hut"/>
                         <outlet property="DULIOSIASTAmyblaoc" destination="Yev-Q3-yCh" id="VyX-iP-97o"/>
                         <outlet property="DULIOSIASTAmyfoll" destination="TTw-Ba-8XK" id="4aM-hW-sRT"/>
                         <outlet property="DULIOSIASTApos" destination="CIL-Lp-h31" id="t4b-th-WpW"/>
